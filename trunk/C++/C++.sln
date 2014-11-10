@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tenta141106", "Tenta141106\Tenta141106.vcxproj", "{0289C372-6C7E-46A2-908F-F58744A94C25}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Datakom", "Datakom\Datakom.vcxproj", "{323816A1-A074-4D62-9A36-CB306F7DCF49}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -19,6 +21,10 @@ Global
 		{0289C372-6C7E-46A2-908F-F58744A94C25}.Debug|Win32.Build.0 = Debug|Win32
 		{0289C372-6C7E-46A2-908F-F58744A94C25}.Release|Win32.ActiveCfg = Release|Win32
 		{0289C372-6C7E-46A2-908F-F58744A94C25}.Release|Win32.Build.0 = Release|Win32
+		{323816A1-A074-4D62-9A36-CB306F7DCF49}.Debug|Win32.ActiveCfg = Debug|Win32
+		{323816A1-A074-4D62-9A36-CB306F7DCF49}.Debug|Win32.Build.0 = Debug|Win32
+		{323816A1-A074-4D62-9A36-CB306F7DCF49}.Release|Win32.ActiveCfg = Release|Win32
+		{323816A1-A074-4D62-9A36-CB306F7DCF49}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
