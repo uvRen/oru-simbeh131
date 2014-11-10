@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TentaStudent", "TentaStuden
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe", "TicTacToe\TicTacToe.vcxproj", "{FDA1A547-2DA2-449A-8340-4A7EC074B820}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dice", "Dice\Dice.vcxproj", "{E6A0A99E-EC73-4422-9342-261ED207848E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Car", "Car\Car.vcxproj", "{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -37,6 +41,14 @@ Global
 		{FDA1A547-2DA2-449A-8340-4A7EC074B820}.Debug|Win32.Build.0 = Debug|Win32
 		{FDA1A547-2DA2-449A-8340-4A7EC074B820}.Release|Win32.ActiveCfg = Release|Win32
 		{FDA1A547-2DA2-449A-8340-4A7EC074B820}.Release|Win32.Build.0 = Release|Win32
+		{E6A0A99E-EC73-4422-9342-261ED207848E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E6A0A99E-EC73-4422-9342-261ED207848E}.Debug|Win32.Build.0 = Debug|Win32
+		{E6A0A99E-EC73-4422-9342-261ED207848E}.Release|Win32.ActiveCfg = Release|Win32
+		{E6A0A99E-EC73-4422-9342-261ED207848E}.Release|Win32.Build.0 = Release|Win32
+		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Debug|Win32.Build.0 = Debug|Win32
+		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Release|Win32.ActiveCfg = Release|Win32
+		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
