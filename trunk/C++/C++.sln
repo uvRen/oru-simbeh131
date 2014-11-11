@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dice", "Dice\Dice.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Car", "Car\Car.vcxproj", "{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTrationella", "ADTrationella\ADTrationella.vcxproj", "{090B39E5-EFA6-40C6-94BC-B845CC07928C}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -49,6 +51,10 @@ Global
 		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Debug|Win32.Build.0 = Debug|Win32
 		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Release|Win32.ActiveCfg = Release|Win32
 		{5FCA3A0E-034C-4E14-B1B0-9EE7ABE626BC}.Release|Win32.Build.0 = Release|Win32
+		{090B39E5-EFA6-40C6-94BC-B845CC07928C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{090B39E5-EFA6-40C6-94BC-B845CC07928C}.Debug|Win32.Build.0 = Debug|Win32
+		{090B39E5-EFA6-40C6-94BC-B845CC07928C}.Release|Win32.ActiveCfg = Release|Win32
+		{090B39E5-EFA6-40C6-94BC-B845CC07928C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
