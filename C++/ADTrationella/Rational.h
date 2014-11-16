@@ -62,18 +62,10 @@ namespace Simon {
 				return a;
 			}
 
-			friend Rational<T> operator*(const Rational<T> &left, const Rational<T> &right) {
-				Rational<T> a;
-				a.taljare = left.taljare * right.taljare;
-				a.namnare = left.namnare * right.namnare;
-
-				return a;
-			}
-
 			friend Rational<T> operator-(const Rational<T> &left, const Rational<T> &right) {
 				Rational<T> a;
 				if (left.namnare != right.namnare) {
-					if (left.namnare < right.namnare) { // 1/2 - 1/4 = 6/4
+					if (left.namnare < right.namnare) { // 1/2 - 1/4 = 1/4
 						if (right.namnare % left.namnare == 0) {
 							a.taljare = (left.taljare * (right.namnare / left.namnare)) - right.taljare;
 							a.namnare = right.namnare;
@@ -84,9 +76,9 @@ namespace Simon {
 							a.taljare = a.taljare - (right.taljare * left.namnare);
 						}
 					}
-					else {  // 4/4 - 1/2 = 6/4
+					else {  // 1/4 - 1/2 = -1/4
 						if (left.namnare % right.namnare == 0) {
-							a.taljare = (right.taljare * (left.namnare / right.namnare)) - left.taljare;
+							a.taljare = left.taljare - (right.taljare * (left.namnare / right.namnare));
 							a.namnare = left.namnare;
 						}
 						else { //hitta gemensama nämnare
@@ -100,6 +92,27 @@ namespace Simon {
 					a.taljare = left.taljare - right.taljare;
 					a.namnare = left.namnare - right.namnare;
 				}
+				return a;
+			}
+
+			friend Rational<T> operator*(const Rational<T> &left, const Rational<T> &right) {
+				Rational<T> a;
+				a.taljare = left.taljare * right.taljare;
+				a.namnare = left.namnare * right.namnare;
+
+				return a;
+			}
+
+			friend Rational<T> operator/(const Rational<T> &left, const Rational<T> &right) {
+				Rational<T> a;
+				Rational<T> b;
+
+				b.taljare = right.namnare;
+				b.namnare = right.taljare;
+
+				a.taljare = left.taljare * b.taljare;
+				a.namnare = left.namnare * b.namnare;
+
 				return a;
 			}
 
