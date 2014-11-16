@@ -15,7 +15,6 @@ int main() {
 			cout << "r1 * r2 = " << r1 * r2 << endl;
 			cout << "r1 / r2 = " << r1 / r2 << endl;
 
-			cout << endl << "Resten är: " << 8 % 4 << endl;
 		}
 	
 	system("pause");
