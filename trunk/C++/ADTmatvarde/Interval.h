@@ -22,6 +22,26 @@ public:
 		lower = (T)value - ((T)value * (percent / 100));
 	}
 
+	T mean() {
+		return (upper + lower) / 2;
+	}
+
+	double relative_error() {
+		return (upper - lower) / mean();
+	}
+
+	double absolute_error() {
+		return (mean() * relative_error());
+	}
+
+	void print_relativeError() {
+		cout << "Relativa felet: " << relative_error() << endl;
+	}
+
+	void print_absoluteError() {
+		cout << "Absoluta felet: " << absolute_error() << endl;
+	}
+
 	friend ostream& operator<<(ostream &ut, const Interval<T> &a) {
 		ut << '[' << a.upper << ',' << a.lower << ']';
 		return ut;
