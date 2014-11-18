@@ -22,7 +22,6 @@ int main() {
 	cout << "P = U * I" << endl;
 	cout << "P = " << u3 * i3 << endl;
 
-
 	system("pause");
 	return 0;
 }
