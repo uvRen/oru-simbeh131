@@ -12,11 +12,11 @@ int main()
 	int a = 193;
 	string adress = "", klipp = "";
 	IP p;
-	//p.getInfo();
-	//p.calculate(p);
-	//p.printAll();
+	p.getInfo();
+	p.calculate(p);
+	p.printAll();
 
-	cout << endl << endl << p.decimalToBinary(98) << endl;
+	//cout << endl << endl << p.decimalToBinary(98) << endl;
 	system("pause");
 
 	return 0;
