@@ -11,6 +11,8 @@ int main() {
 	cout << "a-b = " << a - b << endl;
 	cout << "a*b = " << a * b << endl;cout << "a*b = " << a * b << endl;
 	cout << "a/b = " << a / b << endl;
+	a.print_relativeError();
+	a.print_absoluteError();
 
 
 	system("pause");
