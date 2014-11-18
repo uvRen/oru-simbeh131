@@ -23,7 +23,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnkelLista", "EnkelLista\En
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTcomplex", "ADTcomplex\ADTcomplex.vcxproj", "{C60850AD-C3CC-4228-997D-D1430EF34014}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTmatvarde", "ADTmatvarde\ADTmatvarde.vcxproj", "{BB931FFD-CADB-42C0-9BE6-4B632A4D5D8A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTmatvarde", "ADTmatvarde\ADTmatvarde.vcxproj", "{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -75,10 +75,10 @@ Global
 		{C60850AD-C3CC-4228-997D-D1430EF34014}.Debug|Win32.Build.0 = Debug|Win32
 		{C60850AD-C3CC-4228-997D-D1430EF34014}.Release|Win32.ActiveCfg = Release|Win32
 		{C60850AD-C3CC-4228-997D-D1430EF34014}.Release|Win32.Build.0 = Release|Win32
-		{BB931FFD-CADB-42C0-9BE6-4B632A4D5D8A}.Debug|Win32.ActiveCfg = Debug|Win32
-		{BB931FFD-CADB-42C0-9BE6-4B632A4D5D8A}.Debug|Win32.Build.0 = Debug|Win32
-		{BB931FFD-CADB-42C0-9BE6-4B632A4D5D8A}.Release|Win32.ActiveCfg = Release|Win32
-		{BB931FFD-CADB-42C0-9BE6-4B632A4D5D8A}.Release|Win32.Build.0 = Release|Win32
+		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Debug|Win32.Build.0 = Debug|Win32
+		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Release|Win32.ActiveCfg = Release|Win32
+		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
