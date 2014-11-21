@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTcomplex", "ADTcomplex\AD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTmatvarde", "ADTmatvarde\ADTmatvarde.vcxproj", "{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ADTglosor", "ADTglosor\ADTglosor.vcxproj", "{8D9B3E49-E51C-43CC-9E8D-792E286B566F}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -79,6 +81,10 @@ Global
 		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Debug|Win32.Build.0 = Debug|Win32
 		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Release|Win32.ActiveCfg = Release|Win32
 		{4B1312EB-BA0E-4A65-830D-F4F996B9D4AB}.Release|Win32.Build.0 = Release|Win32
+		{8D9B3E49-E51C-43CC-9E8D-792E286B566F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8D9B3E49-E51C-43CC-9E8D-792E286B566F}.Debug|Win32.Build.0 = Debug|Win32
+		{8D9B3E49-E51C-43CC-9E8D-792E286B566F}.Release|Win32.ActiveCfg = Release|Win32
+		{8D9B3E49-E51C-43CC-9E8D-792E286B566F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
