@@ -97,5 +97,19 @@ public:
 		}
 	}
 
-	// lägga till ny ord 
+	void addWord() {
+		string s;
+		while (true) {
+			Glosor<string> a;
+			cout << "Ange nytt ord till gloslistan: (ord,motsvarandeOrd) avsluta med att skriva -1" << endl;
+			getline(cin, s);
+			if (s.compare("-1") == 0)
+				break;
+			istringstream iss(s);
+			iss >> a;
+			l.push_back(a);
+		}
+		writeToFile();
+	}
+
 };
