@@ -71,6 +71,7 @@ public:
 		}
 	}
 
+	//returnerar listans innehåll
 	string str() {
 		ostringstream oss;
 		Node<INFO> *n = head;
