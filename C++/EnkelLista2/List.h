@@ -84,6 +84,21 @@ public:
 		}
 	}
 
+	//söker efter en viss sträng
+	Node* search(string find) {
+		if (head == nullptr)
+			return nullptr;
+		else {
+			Node *n = head;
+			while (n != nullptr) {
+				if (n->name == find)
+					return n;
+				n = n->next;
+			}
+		}
+		return nullptr;
+	}
+
 	//returnerar listans innehåll
 	string printList() {
 		ostringstream oss;
@@ -99,5 +114,10 @@ public:
 		oss << ']';
 
 		return oss.str();
+	}
+
+	friend ostream& operator<<(ostream &ut, const Node &n) {
+		ut << '[' << n.name << ']';
+		return ut;
 	}
 };
