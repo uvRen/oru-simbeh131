@@ -41,7 +41,10 @@ public:
 
 	void writeToFile() {
 		ofstream ut;
-		ut.open("gloslista.txt");
+		string filnamn = this->name;
+		filnamn = filnamn.append(".txt");
+
+		ut.open(filnamn);
 
 		ut << "Gloslista=" << this->name << endl;
 		for (int i = 0; i < l.size(); i++) {
@@ -63,10 +66,11 @@ public:
 
 	void readFromFile() {
 		ifstream in;
-		string row, s;
+		string row, s, filnamn = this->name;
+		filnamn = filnamn.append(".txt");
 
 		try {
-			in.open("gloslista.txt");
+			in.open(filnamn);
 			if (!in.good()) {
 				cout << "Kunde inte öppna filen!";
 				return;

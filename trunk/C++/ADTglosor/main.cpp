@@ -3,12 +3,12 @@
 using namespace std;
 
 int main() {
-	GlosLista lista("Simon");
+	GlosLista lista("SweToEng");
 	Glosor<string> a("bil", "car"), b("hus", "house"), c("hund", "dog"), d;
 
 	istringstream iss("(skola,school)");
 
-	/*lista.addWord(a);
+	lista.addWord(a);
 	lista.addWord(b);
 	lista.addWord(c);
 	iss >> d;
@@ -18,15 +18,7 @@ int main() {
 	lista.writeToFile();
 
 	lista.readFromFile();
-	cout << lista.List() << endl;*/
-
-	lista.readFromFile();
-	cout << lista.List() << endl << endl;
-
-	lista.addWord();
-	lista.readFromFile();
 	cout << lista.List() << endl;
-
 
 	system("pause");
 	return 0;
