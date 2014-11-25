@@ -30,4 +30,18 @@ public:
 	bool empty() {
 		return (head == nullptr);
 	}
+
+	void push_front(T info) {
+		//om listan är tom
+		if (head == nullptr) {
+			head = new Node<T>(info);
+			tail = head;
+		}
+		//om listan inte är tom
+		else {
+			Node<T> *n = new Node<T>(info);
+			n->next = head;
+			head = n;
+		}
+	}
 };
