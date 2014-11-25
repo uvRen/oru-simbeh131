@@ -31,8 +31,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnkelLista2", "EnkelLista2\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TidsTest", "TidsTest\TidsTest.vcxproj", "{75A0DE9F-11A3-4D38-899D-059E310D919A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnkelListaMedTest", "EnkelListaMedTest\EnkelListaMedTest.vcxproj", "{1B687D99-B5A8-41D6-89FB-4932791C7FBB}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "forward_list", "forward_list\forward_list.vcxproj", "{68833367-FA91-4459-B68E-2F0EE1A9CC1B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST-forward_list", "TEST-forward_list\TEST-forward_list.vcxproj", "{73F892C1-4B48-49C9-82DB-9DF8C307973C}"
@@ -103,10 +101,6 @@ Global
 		{75A0DE9F-11A3-4D38-899D-059E310D919A}.Debug|Win32.Build.0 = Debug|Win32
 		{75A0DE9F-11A3-4D38-899D-059E310D919A}.Release|Win32.ActiveCfg = Release|Win32
 		{75A0DE9F-11A3-4D38-899D-059E310D919A}.Release|Win32.Build.0 = Release|Win32
-		{1B687D99-B5A8-41D6-89FB-4932791C7FBB}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1B687D99-B5A8-41D6-89FB-4932791C7FBB}.Debug|Win32.Build.0 = Debug|Win32
-		{1B687D99-B5A8-41D6-89FB-4932791C7FBB}.Release|Win32.ActiveCfg = Release|Win32
-		{1B687D99-B5A8-41D6-89FB-4932791C7FBB}.Release|Win32.Build.0 = Release|Win32
 		{68833367-FA91-4459-B68E-2F0EE1A9CC1B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{68833367-FA91-4459-B68E-2F0EE1A9CC1B}.Debug|Win32.Build.0 = Debug|Win32
 		{68833367-FA91-4459-B68E-2F0EE1A9CC1B}.Release|Win32.ActiveCfg = Release|Win32
