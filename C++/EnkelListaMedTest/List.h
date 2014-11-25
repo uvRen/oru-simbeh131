@@ -1,3 +1,5 @@
+#include <exception>
+#include <iostream>
 
 template<class INFO>
 struct Node {
@@ -10,6 +12,7 @@ struct Node {
 
 	Node<INFO>(INFO a) {
 		information = a;
+		next = nullptr;
 	}
 };
 
@@ -32,15 +35,27 @@ public:
 
 	//add_at_head
 	void push_front(INFO a) {
-		//om listan är 
-		Node<INFO> *n = new Node<INFO>(a);
+		//om listan är tom
 		if (head == nullptr) {
-			head = n;
+			head = new Node<INFO>(a);
 			tail = head;
 		}
 		else {
+			Node<INFO> *n = new Node<INFO>(a);
 			n->next = head;
 			head = n;
 		}
+	}
+
+	int count() {
+		Node<INFO> *n = head;
+		int i = 0;
+
+		while (n != nullptr) {
+			i++;
+			n = n->next;
+		}
+
+		return i;
 	}
 };

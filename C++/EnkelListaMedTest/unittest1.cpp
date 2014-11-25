@@ -12,14 +12,17 @@ namespace EnkelListaMedTest
 	public:
 		
 		TEST_METHOD(TestListIsEmpty) {
-			List<std::string> a;
+			List<int> a;
 			Assert::AreEqual(true, a.isEmpty());
-			a.push_front("Simon");
+			a.push_front(10);
 			Assert::AreEqual(false, a.isEmpty());
 		}
 
 		TEST_METHOD(TestListPushFront) {
-
+			List<int> a;
+			a.push_front(1);
+			a.push_front(2);
+			Assert::AreEqual(2, a.count());
 		}
 
 	};
