@@ -10,7 +10,6 @@ namespace EnkelListaMedTest
 	TEST_CLASS(UnitTest1)
 	{
 	public:
-		
 		TEST_METHOD(TestListIsEmpty) {
 			List<int> a;
 			Assert::AreEqual(true, a.isEmpty());
