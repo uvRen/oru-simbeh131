@@ -3,6 +3,14 @@ template<class INFO>
 struct Node {
 	INFO information;
 	Node<INFO> *next;
+
+	Node<INFO>() {
+		next = nullptr;
+	}
+
+	Node<INFO>(INFO a) {
+		information = a;
+	}
 };
 
 template<class INFO>
@@ -12,13 +20,27 @@ private:
 	Node<INFO> *tail;
 
 public:
+	//konstruktor
 	List() {
 		head = tail = nullptr;
 	}
 
-	/*bool isEmpty() {
-		if (head == nullptr)
-			return true;
-		return false;
-	}*/
+	//funktioner
+	bool isEmpty() {
+		return (head == nullptr);
+	}
+
+	//add_at_head
+	void push_front(INFO a) {
+		//om listan är 
+		Node<INFO> *n = new Node<INFO>(a);
+		if (head == nullptr) {
+			head = n;
+			tail = head;
+		}
+		else {
+			n->next = head;
+			head = n;
+		}
+	}
 };

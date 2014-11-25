@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CA721478-6339-4F23-AD73-FB8BA60B8F6D}</ProjectGuid>
+    <ProjectGuid>{1B687D99-B5A8-41D6-89FB-4932791C7FBB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>EnkelListaMedTest</RootNamespace>
   </PropertyGroup>

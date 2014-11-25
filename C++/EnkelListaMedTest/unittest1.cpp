@@ -11,10 +11,15 @@ namespace EnkelListaMedTest
 	{
 	public:
 		
-		TEST_METHOD(TestListIsEmpty)
-		{
-			/*List<std::string> a;
-			Assert::AreEqual(true, a.isEmpty());*/
+		TEST_METHOD(TestListIsEmpty) {
+			List<std::string> a;
+			Assert::AreEqual(true, a.isEmpty());
+			a.push_front("Simon");
+			Assert::AreEqual(false, a.isEmpty());
+		}
+
+		TEST_METHOD(TestListPushFront) {
+
 		}
 
 	};
