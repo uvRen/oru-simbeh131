@@ -25,5 +25,12 @@ namespace EnkelListaMedTest
 			Assert::AreEqual(2, a.count());
 		}
 
+		TEST_METHOD(TestListPop) {
+			List<int> a;
+			a.push_front(10);
+			Assert::AreEqual(10, a.pop());
+			Assert::AreEqual(true, a.isEmpty());
+		}
+
 	};
 }
