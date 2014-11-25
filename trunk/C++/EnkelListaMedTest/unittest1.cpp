@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include "List.h"
+#include <string>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -9,9 +11,10 @@ namespace EnkelListaMedTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestListIsEmpty)
 		{
-			// TODO: Your test code here
+			/*List<std::string> a;
+			Assert::AreEqual(true, a.isEmpty());*/
 		}
 
 	};
