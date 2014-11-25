@@ -47,6 +47,15 @@ public:
 		}
 	}
 
+	INFO pop() {
+		Node<INFO> *n = head;
+		INFO a = head->information;
+
+		head = head->next;
+		delete n;
+		return a;
+	}
+
 	int count() {
 		Node<INFO> *n = head;
 		int i = 0;
