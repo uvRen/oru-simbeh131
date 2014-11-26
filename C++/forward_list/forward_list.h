@@ -1,3 +1,10 @@
+#include <sstream>
+#include <iostream>
+#include <ostream>
+#include <xmemory>
+#include <stdexcept>
+
+using namespace std;
 
 template<class T>
 struct Node {
@@ -43,5 +50,22 @@ public:
 			n->next = head;
 			head = n;
 		}
+	}
+
+	void pop() {
+		Node<T> *n = head;
+
+		//om listan bara har ett objekt
+		if (head->next == nullptr) {
+			head = tail = nullptr;
+		}
+		else {
+			head = head->next;
+		}
+		delete n;
+	}
+
+	T& front() {
+		return head->information;
 	}
 };
