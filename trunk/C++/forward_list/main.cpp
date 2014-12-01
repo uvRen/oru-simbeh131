@@ -38,6 +38,11 @@ int main() {
 
 	cout << endl;
 
+	lista = lista2;
+
+	for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
+		cout << *i << ' ';
+	}
 
 
 

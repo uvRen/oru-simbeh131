@@ -86,6 +86,33 @@ public:
 	}
 
 	//funktioner
+	void clear() {
+		Node<T> *n = head;
+
+		while (n != nullptr) {
+			Node<T> *temp = n->next;
+			delete n;
+			n = temp;
+		}
+		head = nullptr;
+	}
+
+	forward_list& operator=(forward_list &right) {
+		clear();
+
+		head = new Node<T>(right.head->information);
+		Node<T> *n = head;
+		Node<T> *old = right.head->next;
+
+		while (old != nullptr) {
+			n->next = new Node<T>(old->information);
+			n = n->next;
+			old = old->next;
+		}
+
+		return *this;
+	}
+
 	bool empty() {
 		return (head == nullptr);
 	}
