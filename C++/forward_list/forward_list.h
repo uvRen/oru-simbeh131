@@ -81,8 +81,8 @@ public:
 		}
 	}
 
-	~forward_list() {
-
+	virtual ~forward_list() {
+		clear();
 	}
 
 	//funktioner
