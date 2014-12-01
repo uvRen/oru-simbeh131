@@ -29,5 +29,22 @@ namespace TESTforward_list
 			Assert::AreEqual(30, lista.front());
 		}
 
+		TEST_METHOD(TestListaBeginEnd) {
+			forward_list<int> lista;
+
+			lista.push_front(1);
+			lista.push_front(2);
+			lista.push_front(3);
+			lista.push_front(4);
+
+			int tal = 4;
+
+			for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
+				Assert::AreEqual(*i, tal);
+				tal--;
+			}
+
+		}
+
 	};
 }

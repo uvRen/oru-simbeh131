@@ -53,6 +53,10 @@ public:
 			return (current != rhs.current);
 		}
 
+		bool operator==(const iterator &rhs) {
+			return (current == rhs.current);
+		}
+
 		T& operator*() {
 			return current->information;
 		}
