@@ -25,7 +25,6 @@ template<class T>
 class forward_list {
 private:
 	Node<T> *head;
-	Node<T> *tail;
 
 public:
 	//konstruktor
@@ -37,17 +36,27 @@ public:
 
 	}
 
-	class Interator {
+	class iterator {
 	public:
-		Iterator(Node<T> *n) {
+		//konstruktor
+		iterator(Node<T> *n) {
 			current = n;
 		}
 
-		Iterator operator++() {
+		//funktioner
+		iterator operator++() {
 			current = current->next;
 			return *this;
 		}
-		
+
+		bool operator!=(const iterator &rhs) {
+			return (current != rhs.current);
+		}
+
+		T& operator*() {
+			return current->information;
+		}
+
 	private:
 		Node<T>* current;
 	};
@@ -85,5 +94,19 @@ public:
 
 	T& front() {
 		return head->information;
+	}
+
+	iterator begin() {
+		return iterator(head);
+	}
+
+	iterator end() {
+		Node<T> *n = head;
+
+		while (n != nullptr) {
+			n = n->next;
+		}
+
+		return iterator(n);
 	}
 };
