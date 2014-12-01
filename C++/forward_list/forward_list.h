@@ -30,8 +30,27 @@ private:
 public:
 	//konstruktor
 	forward_list() {
-		head = tail = nullptr;
+		head = nullptr;
 	}
+
+	~forward_list() {
+
+	}
+
+	class Interator {
+	public:
+		Iterator(Node<T> *n) {
+			current = n;
+		}
+
+		Iterator operator++() {
+			current = current->next;
+			return *this;
+		}
+		
+	private:
+		Node<T>* current;
+	};
 
 	//funktioner
 	bool empty() {
@@ -42,7 +61,6 @@ public:
 		//om listan är tom
 		if (head == nullptr) {
 			head = new Node<T>(info);
-			tail = head;
 		}
 		//om listan inte är tom
 		else {
@@ -57,7 +75,7 @@ public:
 
 		//om listan bara har ett objekt
 		if (head->next == nullptr) {
-			head = tail = nullptr;
+			head = nullptr;
 		}
 		else {
 			head = head->next;
