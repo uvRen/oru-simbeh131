@@ -27,15 +27,7 @@ private:
 	Node<T> *head;
 
 public:
-	//konstruktor
-	forward_list() {
-		head = nullptr;
-	}
-
-	~forward_list() {
-
-	}
-
+	
 	class iterator {
 	public:
 		//konstruktor
@@ -57,6 +49,10 @@ public:
 			return (current == rhs.current);
 		}
 
+		Node<T>* operator->() {
+			return current;
+		}
+
 		T& operator*() {
 			return current->information;
 		}
@@ -64,6 +60,30 @@ public:
 	private:
 		Node<T>* current;
 	};
+
+
+	//konstruktor
+	forward_list() {
+		head = nullptr;
+	}
+
+	forward_list(const forward_list &obj) {
+		Node<T> *old = obj.head;
+		Node<T> *ny;
+		head = new Node<T>(obj.head->information);
+		ny = head;
+		old = old->next;
+
+		while (old != nullptr) {
+			ny->next = new Node<T>(old->information);
+			ny = ny->next;
+			old = old->next;
+		}
+	}
+
+	~forward_list() {
+
+	}
 
 	//funktioner
 	bool empty() {
@@ -113,4 +133,5 @@ public:
 
 		return iterator(n);
 	}
+
 };
