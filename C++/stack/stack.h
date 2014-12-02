@@ -64,4 +64,8 @@ public:
 		}
 		return ut;
 	}
+
+	T top() {
+		return head->next->info;
+	}
 };
