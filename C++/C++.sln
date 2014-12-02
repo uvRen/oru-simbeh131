@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "forward_list", "forward_lis
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST-forward_list", "TEST-forward_list\TEST-forward_list.vcxproj", "{73F892C1-4B48-49C9-82DB-9DF8C307973C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack", "stack\stack.vcxproj", "{8546DDBF-7FE0-43D8-AAC9-6AB688C64CD5}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -109,6 +111,10 @@ Global
 		{73F892C1-4B48-49C9-82DB-9DF8C307973C}.Debug|Win32.Build.0 = Debug|Win32
 		{73F892C1-4B48-49C9-82DB-9DF8C307973C}.Release|Win32.ActiveCfg = Release|Win32
 		{73F892C1-4B48-49C9-82DB-9DF8C307973C}.Release|Win32.Build.0 = Release|Win32
+		{8546DDBF-7FE0-43D8-AAC9-6AB688C64CD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8546DDBF-7FE0-43D8-AAC9-6AB688C64CD5}.Debug|Win32.Build.0 = Debug|Win32
+		{8546DDBF-7FE0-43D8-AAC9-6AB688C64CD5}.Release|Win32.ActiveCfg = Release|Win32
+		{8546DDBF-7FE0-43D8-AAC9-6AB688C64CD5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
