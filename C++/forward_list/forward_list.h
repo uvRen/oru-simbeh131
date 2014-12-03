@@ -41,6 +41,13 @@ public:
 			return *this;
 		}
 
+		iterator operator+(int plus) {
+			for (int i = 0; i < plus; i++) {
+				current = current->next;
+			}
+			return *this;
+		}
+
 		bool operator!=(const iterator &rhs) {
 			return (current != rhs.current);
 		}
@@ -130,7 +137,7 @@ public:
 		}
 	}
 
-	void pop() {
+	void pop_front() {
 		Node<T> *n = head;
 
 		//om listan bara har ett objekt
@@ -141,6 +148,20 @@ public:
 			head = head->next;
 		}
 		delete n;
+	}
+
+	iterator insert_after(iterator position, T &value) {
+		Node<T> *n = head;
+		Node<T> *ny = new Node<T>(value);
+
+		for (forward_list<T>::iterator it = begin(); it != position; ++it) {
+			n = n->next;
+		}
+
+		ny->next = n->next;
+		n->next = ny;
+		
+		return position + 1;
 	}
 
 	T& front() {
