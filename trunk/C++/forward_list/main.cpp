@@ -21,7 +21,7 @@ int main() {
 	lista.push_front(50);
 	lista.push_front(60);
 
-	lista.push_front(lista.begin().operator*());
+	//lista.push_front(lista.begin().operator*());  lägger till första elementet en gång till
 	forward_list<int> lista2(lista);
 
 	
@@ -29,9 +29,9 @@ int main() {
 	for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
 		cout << *i << ' ';
 	}
-
+	
 	cout << endl;
-
+	/*
 	for (forward_list<int>::iterator i = lista2.begin(); i != lista2.end(); ++i) {
 		cout << *i << ' ';
 	}
@@ -44,7 +44,16 @@ int main() {
 		cout << *i << ' ';
 	}
 
+	cout << endl;
+*/
+	int tal = 45;
+	lista.insert_after(lista.begin()+1, tal);
 
+	for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
+		cout << *i << ' ';
+	}
+
+	cout << endl;
 
 	system("pause");
 	return 0;
