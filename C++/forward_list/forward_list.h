@@ -172,7 +172,13 @@ public:
 				Node<T> *deleteNode = n->next;
 				n->next = n->next->next;
 				delete deleteNode;
-				return position + 1;
+				//om det sista elementet togs bort returneras end()
+				if (n->next == nullptr) {
+					return end();
+				}
+				else {
+					return iterator(n->next);
+				}
 			}
 			n = n->next;
 		}
