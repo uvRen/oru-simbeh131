@@ -149,5 +149,38 @@ namespace TESTforward_list
 				}
 			}
 		}
+
+		TEST_METHOD(ListaTestSwap) {
+			forward_list<int> lista, lista2;
+
+			lista.push_front(10);
+			lista.push_front(20);
+			lista.push_front(30);
+			lista.push_front(40);
+			lista.push_front(50);
+			lista.push_front(60);
+			lista.push_front(70);
+			lista.push_front(80);
+
+			lista2.push_front(99);
+			lista2.push_front(98);
+			lista2.push_front(97);
+
+			lista.swap(lista2);
+
+			Assert::AreEqual(97, lista.front());
+			lista.pop_front();
+			Assert::AreEqual(98, lista.front());
+			lista.pop_front();
+			Assert::AreEqual(99, lista.front());
+			lista.pop_front();
+
+			Assert::AreEqual(80, lista2.front());
+			lista2.pop_front();
+			Assert::AreEqual(70, lista2.front());
+			lista2.pop_front();
+			Assert::AreEqual(60, lista2.front());
+			lista2.pop_front();
+		}
 	};
 }

@@ -185,6 +185,12 @@ public:
 		return begin();
 	}
 
+	void swap(forward_list<T> &right) {
+		Node<T> *n = head;
+		head = right.head;
+		right.head = n;
+	}
+
 	T& front() {
 		return head->information;
 	}
