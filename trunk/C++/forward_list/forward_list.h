@@ -164,6 +164,21 @@ public:
 		return position + 1;
 	}
 
+	iterator erase_after(iterator position) {
+		Node<T> *n = head;
+
+		for (forward_list<T>::iterator it = begin(); it != end(); ++it) {
+			if (it == position) {
+				Node<T> *deleteNode = n->next;
+				n->next = n->next->next;
+				delete deleteNode;
+				return position + 1;
+			}
+			n = n->next;
+		}
+		return begin();
+	}
+
 	T& front() {
 		return head->information;
 	}
