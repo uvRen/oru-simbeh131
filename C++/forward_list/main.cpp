@@ -29,6 +29,8 @@ int main() {
 	for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
 		cout << *i << ' ';
 	}
+
+	
 	
 	cout << endl;
 	/*
@@ -48,11 +50,13 @@ int main() {
 */
 	int tal = 45;
 	lista.insert_after(lista.begin()+1, tal);
+	lista.erase_after(lista.begin() + 1);
 
 	for (forward_list<int>::iterator i = lista.begin(); i != lista.end(); ++i) {
 		cout << *i << ' ';
 	}
 
+	
 	cout << endl;
 
 	system("pause");
