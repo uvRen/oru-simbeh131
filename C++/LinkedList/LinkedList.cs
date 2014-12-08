@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-    class LinkedList<T>
+    class LinkedList<T> : ICollection<T>
     {
         private Node<T> head;
         private Node<T> tail;
@@ -21,6 +21,7 @@ namespace DataStructures
         //funktioner
         public void AddFirst(T information)
         {
+            //om listan är tom
             if (head.nextNode() == null)
             {
                 Node<T> n = new Node<T>(information);
@@ -39,7 +40,78 @@ namespace DataStructures
             }
         }
 
-        public int count()
+        public void AddLast(T information)
+        {
+            //om listan är tom
+            if (head.nextNode() == null)
+            {
+                Node<T> n = new Node<T>(information);
+                head.setNextNode(n);
+                n.setNodeBefore(head);
+                n.setNextNode(tail);
+                tail.setNodeBefore(n);
+            }
+            else
+            {
+                Node<T> n = new Node<T>(information);
+                n.setNodeBefore(tail.nodeBefore());
+                tail.nodeBefore().setNextNode(n);
+                n.setNextNode(tail);
+                tail.setNodeBefore(n);
+            }
+        }
+
+        public void Remove(T information)
+        {
+            Node<T> search = this.Find(information);
+            Node<T> n = head.nextNode();
+
+            while (n != tail)
+            {
+                if (n == search)
+                {
+
+                }
+            }
+
+        }
+
+        public void Clear()
+        {
+            head.setNextNode(null);
+            tail.setNodeBefore(null);
+            
+        }
+
+        public Node<T> Find(T search)
+        {
+            Node<T> n = head.nextNode();
+
+            while (n != tail)
+            {
+                if (n.getInfo().Equals(search))
+                {
+                    return n;
+                }
+                n = n.nextNode();
+                
+            }
+            return null;
+        }
+
+        public bool Contains(T search)
+        {
+            foreach (var item in this)
+            {
+                if (item.Equals(search))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public int Count()
         {
             Node<T> n = head.nextNode();
             int antal = 0;
