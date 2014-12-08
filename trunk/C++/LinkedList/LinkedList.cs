@@ -124,7 +124,8 @@ namespace DataStructures
 
         public void RemoveLast()
         {
-
+            tail.nodeBefore().nodeBefore().setNextNode(tail);
+            tail.setNodeBefore(tail.nodeBefore().nodeBefore());
         }
 
         #endregion

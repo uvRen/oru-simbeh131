@@ -17,6 +17,7 @@ namespace DataStructures
             lista.AddLast(40);
 
             lista.RemoveFirst();
+            lista.RemoveLast();
 
             lista.printList();
             Console.Read();
