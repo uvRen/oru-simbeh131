@@ -8,9 +8,9 @@ namespace DataStructures
 {
     class Node<T>
     {
-        private T information;
-        private Node<T> next;
-        private Node<T> before;
+        private T information { get; set; }
+        private Node<T> next { get; set; }
+        private Node<T> before { get; set; }
 
         public Node()
         {

@@ -14,16 +14,13 @@ namespace DataStructures
             lista.AddFirst(10);
             lista.AddFirst(20);
             lista.AddLast(30);
+            lista.AddLast(40);
 
-            lista.First().getInfo();
+            lista.RemoveFirst();
 
             lista.printList();
-            Console.WriteLine(lista.Count());
             Console.Read();
             
-        }
-        
-        
-        
+        } 
     }
 }

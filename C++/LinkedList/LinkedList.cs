@@ -18,7 +18,7 @@ namespace DataStructures
             tail = new Node<T>();
         }
 
-        //funktioner
+        #region Metoder
         public void AddFirst(T information)
         {
             //om listan är tom
@@ -61,21 +61,6 @@ namespace DataStructures
             }
         }
 
-        public void Remove(T information)
-        {
-            Node<T> search = this.Find(information);
-            Node<T> n = head.nextNode();
-
-            while (n != tail)
-            {
-                if (n == search)
-                {
-
-                }
-            }
-
-        }
-
         public void Clear()
         {
             head.setNextNode(null);
@@ -111,18 +96,6 @@ namespace DataStructures
             return false;
         }
 
-        public int Count()
-        {
-            Node<T> n = head.nextNode();
-            int antal = 0;
-            while (n != tail)
-            {
-                antal++;
-                n = n.nextNode();
-            }
-            return antal;
-        }
-
         public Node<T> First() {
             return head.nextNode();
         }
@@ -142,5 +115,99 @@ namespace DataStructures
                 n = n.nextNode();
             }
         }
+
+        public void RemoveFirst()
+        {
+            head.nextNode().nextNode().setNodeBefore(head);
+            head.setNextNode(head.nextNode().nextNode());
+        }
+
+        public void RemoveLast()
+        {
+
+        }
+
+        #endregion
+
+        #region ICollection
+        public void Add(T item)
+        {
+            this.AddFirst(item);
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            foreach (var data in this)
+            {
+                array[arrayIndex] = data;
+                arrayIndex++;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                int count = 0;
+                foreach (var item in this)
+                {
+                    count++;
+                }
+                return count;
+            }
+        }
+
+        public bool IsReadOnly
+        {
+            get { return false; }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> n = head.nextNode();
+
+            while (n != tail)
+            {
+                yield return n.getInfo();
+                n = n.nextNode();
+            }
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public bool Remove(T information)
+        {
+            Node<T> search = this.Find(information);
+            Node<T> n = head.nextNode();
+
+            while (n != tail)
+            {
+                if (n == search)
+                {
+                    n.nodeBefore().setNextNode(n.nextNode());
+                    n.nextNode().setNodeBefore(n.nodeBefore());
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
+
+        #region Properties
+        public bool Empty
+        {
+            get
+            {
+                return head == null;
+            }
+        }
+        #endregion
+
+
     }
 }
