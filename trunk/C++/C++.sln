@@ -39,7 +39,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack", "stack\stack.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queue", "queue\queue.vcxproj", "{A8CE2051-6AF7-4C85-868D-877F1037ACEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{46220A2D-51C9-438D-A786-A21860421579}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubbelLinkedList", "LinkedList\DubbelLinkedList.csproj", "{46220A2D-51C9-438D-A786-A21860421579}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
