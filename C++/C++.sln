@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queue", "queue\queue.vcxpro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubbelLinkedList", "LinkedList\DubbelLinkedList.csproj", "{46220A2D-51C9-438D-A786-A21860421579}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubbelLinkedListTest", "DubbelLinkedListTest\DubbelLinkedListTest.csproj", "{4C559864-5718-452C-AFC5-3D6156E7ACC3}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -245,6 +247,16 @@ Global
 		{46220A2D-51C9-438D-A786-A21860421579}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{46220A2D-51C9-438D-A786-A21860421579}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{46220A2D-51C9-438D-A786-A21860421579}.Release|Win32.ActiveCfg = Release|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
