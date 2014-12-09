@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubbelLinkedList", "LinkedL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DubbelLinkedListTest", "DubbelLinkedListTest\DubbelLinkedListTest.csproj", "{4C559864-5718-452C-AFC5-3D6156E7ACC3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dejt", "Dejt\Dejt.vcxproj", "{E47736AA-AD39-41D1-9C37-78F13DBB8768}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -257,6 +259,16 @@ Global
 		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4C559864-5718-452C-AFC5-3D6156E7ACC3}.Release|Win32.ActiveCfg = Release|Any CPU
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Debug|Win32.Build.0 = Debug|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Release|Any CPU.ActiveCfg = Release|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Release|Win32.ActiveCfg = Release|Win32
+		{E47736AA-AD39-41D1-9C37-78F13DBB8768}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
