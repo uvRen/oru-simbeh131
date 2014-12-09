@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-    class LinkedList<T> : ICollection<T>
+    public class LinkedList<T> : ICollection<T>
     {
         private Node<T> head;
         private Node<T> tail;
@@ -16,6 +16,9 @@ namespace DataStructures
         {
             head = new Node<T>();
             tail = new Node<T>();
+
+            head.setNextNode(tail);
+            tail.setNodeBefore(head);
         }
 
         #region Metoder
@@ -63,8 +66,8 @@ namespace DataStructures
 
         public void Clear()
         {
-            head.setNextNode(null);
-            tail.setNodeBefore(null);
+            head.setNextNode(tail);
+            tail.setNodeBefore(head);
             
         }
 
@@ -99,10 +102,19 @@ namespace DataStructures
         public Node<T> First() {
             return head.nextNode();
         }
-
         public Node<T> Last()
         {
             return tail.nodeBefore();
+        }
+
+        public T getFirst()
+        {
+            return head.nextNode().getInfo();
+        }
+
+        public T getLast()
+        {
+            return tail.nodeBefore().getInfo();
         }
 
         public void printList()
@@ -118,14 +130,32 @@ namespace DataStructures
 
         public void RemoveFirst()
         {
-            head.nextNode().nextNode().setNodeBefore(head);
-            head.setNextNode(head.nextNode().nextNode());
+            //om det bara finns ett element i listan
+            if (head.nextNode().nextNode() == tail)
+            {
+                head.setNextNode(tail);
+                tail.setNodeBefore(head);
+            }
+            else
+            {
+                head.nextNode().nextNode().setNodeBefore(head);
+                head.setNextNode(head.nextNode().nextNode());
+            }
         }
 
         public void RemoveLast()
         {
-            tail.nodeBefore().nodeBefore().setNextNode(tail);
-            tail.setNodeBefore(tail.nodeBefore().nodeBefore());
+            if (tail.nodeBefore().nodeBefore() == head) 
+            {
+                head.setNextNode(tail);
+                tail.setNodeBefore(head);
+            }
+            else
+            {
+                tail.nodeBefore().nodeBefore().setNextNode(tail);
+                tail.setNodeBefore(tail.nodeBefore().nodeBefore());
+            }
+            
         }
 
         #endregion
@@ -181,7 +211,7 @@ namespace DataStructures
 
         public bool Remove(T information)
         {
-            Node<T> search = this.Find(information);
+            Node<T> search = Find(information);
             Node<T> n = head.nextNode();
 
             while (n != tail)
@@ -192,8 +222,8 @@ namespace DataStructures
                     n.nextNode().setNodeBefore(n.nodeBefore());
                     return true;
                 }
+                n = n.nextNode();
             }
-
             return false;
         }
 
@@ -204,11 +234,10 @@ namespace DataStructures
         {
             get
             {
-                return head == null;
+                return head.nextNode() == tail;
             }
         }
         #endregion
-
 
     }
 }
