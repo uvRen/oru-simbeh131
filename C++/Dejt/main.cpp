@@ -1,9 +1,9 @@
 #include "../forward_list/forward_list.h"
 #include <string>
-#include "Interest.h"
+#include "InterestTable.h"
 
 int main() {
-	Interest intresse;
+	InterestTable intresse;
 
 	intresse.Add("training");
 	intresse.Add("movies");

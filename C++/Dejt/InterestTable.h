@@ -3,23 +3,20 @@
 #include <ostream>
 #include <sstream>
 #include <fstream>
+#include "../forward_list/forward_list.h"
 
 using namespace std;
 
-class Interest {
+class InterestTable {
 private:
-	vector<string> lista;
+	forward_list<string> lista;
 
 public:
-	Interest() {
-
-	}
-	
 	void Add(string intresse) {
-		lista.push_back(intresse);
+		lista.push_front(intresse);
 	}
 
-	void WriteToFile() {
+	/*void WriteToFile() {
 		ofstream ut;
 		string filnamn = "intresse.txt";
 
@@ -33,5 +30,5 @@ public:
 		}
 
 		ut.close();
-	}
+	}*/
 };
