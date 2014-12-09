@@ -18,8 +18,12 @@ namespace DataStructures
 
             lista.RemoveFirst();
             lista.RemoveLast();
+            lista.RemoveFirst();
+            lista.RemoveFirst();
 
-            lista.printList();
+            //lista.printList();
+            Console.Write("Count: ");
+            Console.Write(lista.Count);
             Console.Read();
             
         } 
