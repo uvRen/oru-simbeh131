@@ -1,3 +1,4 @@
+#pragma once
 #include <sstream>
 #include <iostream>
 #include <ostream>
@@ -193,6 +194,10 @@ public:
 
 	T& front() {
 		return head->information;
+	}
+
+	Node<T>* headNode() {
+		return head;
 	}
 
 	iterator begin() {
