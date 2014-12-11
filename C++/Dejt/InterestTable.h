@@ -12,8 +12,27 @@ private:
 	forward_list<string> intresse;
 
 public:
-	void Add(string intresse) {
+	void AddInterest(string intresse) {
 		this->intresse.push_front(intresse);
+	}
+	
+	string toString() {
+		ostringstream ut;
+
+		forward_list<string>::iterator check = intresse.begin();
+
+		ut << '[';
+		for (forward_list<string>::iterator it = intresse.begin(); it != intresse.end(); ++it) {
+			ut << *it;
+			check = it;
+			check++;
+			if (check != intresse.end()) {
+				ut << ',';
+			}
+		}
+		ut << ']';
+
+		return ut.str();
 	}
 
 	void WriteToFile() {
@@ -52,7 +71,10 @@ public:
 				istringstream iss(row);
 				getline(iss, str, '[');
 				getline(iss, row, ']');
-				cout << row << endl;
+				istringstream iss2(row);
+				while (getline(iss2, str, ',')) {
+					intresse.push_front(str);
+				}
 			}
 			in.close();
 		}

@@ -2,20 +2,24 @@
 #include <string>
 #include "InterestTable.h"
 
-int main() {
+void testInterestTable() {
 	InterestTable intresse;
 
-	intresse.Add("training");
-	intresse.Add("movies");
-	intresse.Add("swimming");
+	intresse.AddInterest("training");
+	intresse.AddInterest("movies");
+	intresse.AddInterest("swimming");
 
 	intresse.printList();
-
 	intresse.WriteToFile();
-
 	intresse.ReadFromFile();
+	intresse.printList();
 
-	intresse.WriteToFile();
+	cout << endl << intresse.toString() << endl;
+}
+
+int main() {
+	testInterestTable();
+
 
 	system("pause");
 	return 0;
