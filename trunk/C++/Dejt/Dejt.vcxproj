@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClInclude Include="InterestTable.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="PersonList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

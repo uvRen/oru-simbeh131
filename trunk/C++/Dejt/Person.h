@@ -3,17 +3,20 @@
 
 class Person {
 private:
-	string namn;
+	string namn, gender;
 	InterestTable intresse;
 
 public:
 	//konstruktor
 	Person() {
 		namn = "";
+		gender = "";
 	}
 
-	Person(string namn) {
+	Person(string namn, string gender) {
 		this->namn = namn;
+		this->gender = gender;
+
 	}
 
 	//funktioner
