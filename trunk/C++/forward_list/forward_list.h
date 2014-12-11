@@ -29,6 +29,7 @@ private:
 
 public:
 	
+	#pragma region Iterator
 	class iterator {
 	public:
 		//konstruktor
@@ -68,12 +69,14 @@ public:
 	private:
 		Node<T>* current;
 	};
+	#pragma endregion Iterator
 
-
+	#pragma region Konstruktor
 	//konstruktor
 	forward_list() {
 		head = nullptr;
 	}
+	
 
 	forward_list(const forward_list &obj) {
 		Node<T> *old = obj.head;
@@ -92,7 +95,10 @@ public:
 	virtual ~forward_list() {
 		clear();
 	}
+	#pragma endregion Konstruktor
 
+
+	#pragma region forward_list orginal funktioner
 	//funktioner
 	void clear() {
 		Node<T> *n = head;
@@ -196,9 +202,7 @@ public:
 		return head->information;
 	}
 
-	Node<T>* headNode() {
-		return head;
-	}
+	
 
 	iterator begin() {
 		return iterator(head);
@@ -213,5 +217,9 @@ public:
 
 		return iterator(n);
 	}
+	#pragma endregion forward_list orginal funktioner
 
+	Node<T>* headNode() {
+		return head;
+	}
 };
