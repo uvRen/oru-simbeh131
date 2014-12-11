@@ -1,6 +1,7 @@
 #include "../forward_list/forward_list.h"
 #include <string>
 #include "InterestTable.h"
+#include "Person.h"
 
 void testInterestTable() {
 	InterestTable intresse;
@@ -17,9 +18,24 @@ void testInterestTable() {
 	cout << endl << intresse.toString() << endl;
 }
 
-int main() {
-	testInterestTable();
+void testPerson() {
+	Person p("Simon Berntsson");
 
+	p.AddInterest("sport");
+	p.AddInterest("data");
+	p.AddInterest("godis");
+
+	cout << p.toString() << endl;
+}
+
+int main() {
+	cout << "testInterestTable():" << endl;
+	testInterestTable();
+	cout << endl << endl;
+	cout << "testPerson():" << endl;
+	testPerson();
+	cout << endl << endl;
+	
 
 	system("pause");
 	return 0;
