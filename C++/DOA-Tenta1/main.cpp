@@ -95,7 +95,9 @@ int main() {
 	pair<string, int> a;
 	a = w.getMostFrekventWord();
 
-	cout << "Det vanligaste ordet är '" << get<0>(a) << "' och förekommer " << get<1>(a) << " gånger." << endl;
+	w.printMap();
+
+	cout << "Det vanligaste ordet är '" << get<0>(a) << "' och förekommer " << get<1>(a) << " gånger." << endl << endl << endl << endl;
 
 
 	// 65 -> 90  A-Z 
