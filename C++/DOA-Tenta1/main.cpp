@@ -1,7 +1,9 @@
 #include <iostream>
 #include <deque>
 #include <string>
+#include <clocale>
 #include "statistics.h"
+#include "words.h"
 
 using namespace std;
 
@@ -81,9 +83,24 @@ namespace Betyg3 {
 
 
 int main() {
+	setlocale(LC_ALL, "swedish");
 	/*Betyg3::main1_1();
 	Betyg3::main1_2();
 	Betyg3::main();*/
+
+	words w;
+
+	w.ReadFromFile();
+
+	pair<string, int> a;
+	a = w.getMostFrekventWord();
+
+	cout << "Det vanligaste ordet är '" << get<0>(a) << "' och förekommer " << get<1>(a) << " gånger." << endl;
+
+
+	// 65 -> 90  A-Z 
+	// 97 -> 122 a-z
+	// 10 27 28
 
 	
 	system("pause");
