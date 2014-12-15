@@ -86,6 +86,12 @@ public:
 		return pair<string, int>(word, antal);
 	}
 
+	void printMap() {
+		typedef map<string, int>::iterator it_type;
+		for (it_type it = ord.begin(); it != ord.end(); it++) {
+			cout << '|' << it->first << "| -> " << it->second << endl;
+		}
+	}
 
 	
 };
