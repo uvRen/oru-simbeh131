@@ -33,4 +33,28 @@ public:
 			v[i] = bucket();
 		}
 	}
+
+	void clear() {
+		for (int i = 0; i < v.size(); i++) {
+			v[i] = bucket();
+		}
+	}
+
+	void ReadFromFile() {
+		ifstream in;
+		string row, str;
+
+		try {
+			in.open("salary.txt");
+			clear();
+
+			while (getline(in, row)) {
+				istringstream iss(row);
+			}
+		}
+
+		catch (exception e) {
+
+		}
+	}
 };
