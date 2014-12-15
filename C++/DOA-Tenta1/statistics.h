@@ -7,77 +7,57 @@
 
 using namespace std;
 
-static const int arraySize = 1000003;
-
-struct bucket {
-	int key;
-	int antal;
-
-	bucket() {
-		key = antal = 0;
-	}
-
-	bucket(int key, int antal) {
-		this->key = key;
-		this->antal = antal;
-	}
-};
-
 class statistics {
 private:
-	array<bucket, arraySize> v;
-	int antal;
+	array<int, 10000001> v;
 
 public:
-	statistics() {
-		antal = 0;
-		for (int i = 0; i < v.size(); i++) {
-			v[i] = bucket();
-		}
-	}
 
+	statistics() {
+		clear();
+	}
+	
 	void clear() {
 		for (int i = 0; i < v.size(); i++) {
-			v[i] = bucket();
-		}
-	}
-
-	void printArray() {
-		for (int i = 0; i < v.size(); i++) {
-			cout << "Index: " << i << " -> " << v[i].key << "  " << v[i].antal << endl;;
+			v[i] = 0;
 		}
 	}
 
 	void ReadFromFile() {
 		ifstream in;
-		string row, str;
-		int tal = 0;
-		int index;
-
-		hash<string> h;
+		string row;
+		int tal;
 
 		try {
 			in.open("salary.txt");
-			clear();
-
-			while (getline(in, row)) {
-				istringstream iss(row);
-				tal = stoi(row);
-				if (tal >= 20000 && tal <= 10000000) {
-					index = h(row);
-					index = index % arraySize;
-					if (index < 0) {
-						index = index * -1;
+			if (!in.good()) {
+				cout << "Kunde inte öppna filen!" << endl;
+			}
+			else {
+				clear();
+				while (getline(in, row)) {
+					tal = stoi(row);
+					if (tal >= 20000 && tal <= 10000000) {
+						v[tal]++;
 					}
-					v[index].key = tal;
-					v[index].antal = v[index].antal + 1;
-					antal++;
 				}
 			}
+			in.close();
 		}
 
 		catch (exception e) {
 
 		}
+	}
+
+	int calculate_mean() {
+		long long int sum = 0;
+		int antal = 0;
+
+		for (int i = 20000; i < v.size(); i++) {
+			sum = sum + (i * v[i]);
+			antal += v[i];
+		}
+		return sum/antal;
 	}
 };
