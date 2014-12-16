@@ -131,11 +131,21 @@ namespace Betyg3 {
 	}
 }
 
-namespace Betyg4 {
+using namespace Betyg4;
 
+void main4() {
+	unordered_list lista(1000);
+
+	lista.ReadFromFile();
+
+	pair<string, int> a;
+	a = lista.findMostFrekventWord();
+
+	cout << "Det ord som förekommer flest gånger är '" << a.first << "' och förekommer " << a.second << " gånger." << endl;
 }
 
 
+using namespace std;
 int main() {
 	setlocale(LC_ALL, "swedish");
 	/*Betyg3::main1_1();
@@ -145,23 +155,8 @@ int main() {
 	Betyg3::main3_1();
 	Betyg3::main3_2();*/
 
-	Betyg4::unordered_list lista(10);
+	main4();
 
-	lista.add("6");
-	lista.add("5");
-	lista.add("4");
-	lista.add("3");
-	lista.add("2");
-	lista.add("1");
-
-	lista.count();
-	//lista.printList();
-	lista.remove();
-	lista.count();
-
-
-
-	
 	system("pause");
 	return 0;
 }

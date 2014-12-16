@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <map>
 #include <string>
@@ -16,7 +17,7 @@ public:
 
 	}
 
-	string stringManipulation(string word) {
+	static string stringManipulation(string word) {
 		string newWord = word;
 		char c;
 		int w;
@@ -66,6 +67,7 @@ public:
 					}
 				}
 			}
+			in.close();
 		}
 
 		catch (exception e) {
