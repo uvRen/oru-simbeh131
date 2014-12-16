@@ -21,11 +21,17 @@ namespace Betyg5 {
 	class HashTable {
 	private:
 		Node<KEY, VALUE> *head;
+		vector <Node<KEY, VALUE>> *table;
 
 
 	public:
-		HashTable() {
+		HashTable(int tableSize) {
 			head = nullptr;
+			
+			table = new vector <Node<KEY, VALUE>>(tableSize);
+			for (auto &a : *table) {
+				a = Node<KEY, VALUE>();
+			}
 		}
 	};
 }

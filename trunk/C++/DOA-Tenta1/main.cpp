@@ -158,7 +158,7 @@ int main() {
 
 	//main4();
 
-	Betyg5::HashTable<string, string> h;
+	Betyg5::HashTable<string, string> h(769);
 
 	system("pause");
 	return 0;
