@@ -9,6 +9,7 @@
 #include <vector>
 #include <iomanip>
 #include "unordered_list.h"
+#include "hashtable.h"
 
 using namespace std;
 
@@ -155,7 +156,9 @@ int main() {
 	Betyg3::main3_1();
 	Betyg3::main3_2();*/
 
-	main4();
+	//main4();
+
+	Betyg5::HashTable<string, string> h;
 
 	system("pause");
 	return 0;
