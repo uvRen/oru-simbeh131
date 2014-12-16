@@ -63,7 +63,7 @@ int main_chrono()
 	}
 	const int MAX = 10000; //Indatats storlek n
 	const int DELTA = MAX / 10; //
-	const int nLoop = 100000; //Antal varv i testloopen för medelvärdesutjämning
+	const int nLoop = 10000; //Antal varv i testloopen för medelvärdesutjämning
 	//PROVA: Lågt värde 100, stort värde 10000
 	//       Vad kan påverka.
 

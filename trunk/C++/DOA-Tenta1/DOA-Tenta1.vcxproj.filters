@@ -26,5 +26,14 @@
     <ClInclude Include="words.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hr_time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Watch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unordered_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

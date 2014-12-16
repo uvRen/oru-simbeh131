@@ -4,8 +4,18 @@
 #include <clocale>
 #include "statistics.h"
 #include "words.h"
+#include "Watch.h"
+#include <chrono>
+#include <vector>
+#include <iomanip>
 
 using namespace std;
+
+struct measurement
+{
+	int n;
+	double time;
+};
 
 //funktioner
 namespace Betyg3 {
@@ -28,14 +38,6 @@ namespace Betyg3 {
 	}
 
 	bool palindromRek(string s, int storlek) {
-		/*if (s[storlek - 1] != s[s.size() - 1 - (storlek - 1)]) {
-			return false;
-		}
-		if ((storlek - 1) == ((s.size() - 1) / 2)) {
-			return true;
-		}
-		palindromRek(s, storlek - 1);*/
-
 		if ((storlek - 1) == ((s.size() - 1) / 2)) {
 			return true;
 		}
@@ -46,7 +48,6 @@ namespace Betyg3 {
 			else {
 				return false;
 			}
-
 		}
 	}
 
@@ -79,6 +80,58 @@ namespace Betyg3 {
 
 		cout << "MEAN: " << lista.calculate_mean() << endl;
 	}
+
+	void main3_1() {
+		words ord;
+		ord.ReadFromFile();
+		pair<string, int> a;
+		a = ord.getMostFrekventWord();
+
+		cout << "Det vanligaste ordet är '" << get<0>(a) << "' och förekommer " << get<1>(a) << " gånger." << endl << endl << endl << endl;
+	}
+
+	void main3_2() {
+		const int MAX = 10000; //Indatats storlek n
+		const int DELTA = MAX / 10; //
+		const int nLoop = 2; //Antal varv i testloopen för medelvärdesutjämning
+		//PROVA: Lågt värde 100, stort värde 10000
+		//       Vad kan påverka.
+
+
+		vector<measurement> vTime;
+		Course::Watch  w, wStartEnd;
+		Course::milliseconds t0, t1;
+
+		wStartEnd.restart();
+		cout.precision(2);
+		cout.setf(ios::fixed);
+
+		for (int size = 1; size <= 5; size++) {
+			w.restart();
+			for (int i = 0; i < nLoop; i++) {
+				words ord;
+				ord.ReadFromFile();
+				pair<string, int> a;
+				a = ord.getMostFrekventWord();
+			}
+			t0 = w.elapsedMs();
+
+			double time = (t0.count() / (double)nLoop);
+			std::cout << setw(20) << size << setw(20) << time << "ms" << endl;
+			std::cout.flush();
+
+			measurement m = { size, time };
+			vTime.push_back(m);
+		}
+
+		t1 = wStartEnd.elapsedMs();
+
+		cout << "Totalt åtgången tid: " << (wStartEnd.elapsedMs().count() / 1000.0) << " sekunder" << endl;
+	}
+}
+
+namespace Betyg4 {
+
 }
 
 
@@ -86,23 +139,11 @@ int main() {
 	setlocale(LC_ALL, "swedish");
 	/*Betyg3::main1_1();
 	Betyg3::main1_2();
-	Betyg3::main();*/
+	Betyg3::main2();
 
-	words w;
+	Betyg3::main3_1();
+	Betyg3::main3_2();*/
 
-	w.ReadFromFile();
-
-	pair<string, int> a;
-	a = w.getMostFrekventWord();
-
-	w.printMap();
-
-	cout << "Det vanligaste ordet är '" << get<0>(a) << "' och förekommer " << get<1>(a) << " gånger." << endl << endl << endl << endl;
-
-
-	// 65 -> 90  A-Z 
-	// 97 -> 122 a-z
-	// 10 27 28
 
 	
 	system("pause");
