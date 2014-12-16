@@ -71,6 +71,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hashtable.h" />
     <ClInclude Include="hr_time.h" />
     <ClInclude Include="statistics.h" />
     <ClInclude Include="unordered_list.h" />
