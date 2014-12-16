@@ -8,6 +8,7 @@
 #include <chrono>
 #include <vector>
 #include <iomanip>
+#include "unordered_list.h"
 
 using namespace std;
 
@@ -143,6 +144,21 @@ int main() {
 
 	Betyg3::main3_1();
 	Betyg3::main3_2();*/
+
+	Betyg4::unordered_list lista(10);
+
+	lista.add("6");
+	lista.add("5");
+	lista.add("4");
+	lista.add("3");
+	lista.add("2");
+	lista.add("1");
+
+	lista.count();
+	//lista.printList();
+	lista.remove();
+	lista.count();
+
 
 
 	
