@@ -1,4 +1,8 @@
+#pragma once
 #include <string>
+#include <algorithm>
+#include <fstream>
+#include "words.h"
 
 namespace Betyg4 {
 	using namespace std;
@@ -6,15 +10,18 @@ namespace Betyg4 {
 	class Node {
 	public:
 		string INFO;
+		int antal;
 		Node *next;
 
 		Node() {
 			INFO = "";
+			antal = 0;
 			next = nullptr;
 		}
 
 		Node(string INFO) {
 			this->INFO = INFO;
+			antal = 1;
 			next = nullptr;
 		}
 	};
@@ -106,7 +113,6 @@ namespace Betyg4 {
 		private:
 			Node* current;
 		};
-		};
 
 #pragma endregion Iterator
 
@@ -122,25 +128,34 @@ namespace Betyg4 {
 		}
 
 		void add(string INFO) {
-			//om det finns noder lediga i freelist
-			if (freelist->next != nullptr) {
-				Node *n = freelist->next;
-				if (freelist->next->next != nullptr) {
-					freelist->next = freelist->next->next;
-				}
-				else {
-					freelist->next = nullptr;
-				}
-				n->INFO = INFO;
-				n->next = nullptr;
-				Node *last = lastNode();
-				last->next = n;
+			//om ordet redan finns i listan
+			Node *n = nullptr;
+			n = findWord(INFO);
+			if (n != nullptr) {
+				n->antal = n->antal + 1;
 			}
-			//annars allokera minne för en ny nod
-			else {
-				Node *n = new Node(INFO);
-				Node *last = lastNode();
-				last->next = n;
+			else{
+				//om det finns noder lediga i freelist
+				if (freelist->next != nullptr) {
+					Node *n = freelist->next;
+					if (freelist->next->next != nullptr) {
+						freelist->next = freelist->next->next;
+					}
+					else {
+						freelist->next = nullptr;
+					}
+					n->INFO = INFO;
+					n->antal = 1;
+					n->next = nullptr;
+					Node *last = lastNode();
+					last->next = n;
+				}
+				//annars allokera minne för en ny nod
+				else {
+					Node *n = new Node(INFO);
+					Node *last = lastNode();
+					last->next = n;
+				}
 			}
 		}
 
@@ -149,6 +164,7 @@ namespace Betyg4 {
 			head->next = n->next;
 
 			n->INFO = "";
+			n->antal = 0;
 			n->next = freelist->next;
 			freelist->next = n;
 		}
@@ -161,11 +177,92 @@ namespace Betyg4 {
 				temp = head->next;
 				head->next = head->next->next;
 				temp->INFO = "";
+				temp->antal = 0;
 				temp->next = freelist->next;
 				freelist->next = temp;
 			}
 		}
+
+		iterator begin() {
+			return iterator(head->next);
+		}
+
+		iterator end() {
+			Node *n = head;
+
+			while (n != nullptr) {
+				n = n->next;
+			}
+			return iterator(n);
+		}
 		
+		int countWords() {
+			int antal = 0;
+			unordered_list::iterator it = begin();
+			for (it = begin(); it != end(); ++it) {
+				antal++;
+			}
+			return antal;
+		}
+
+		Node* findWord(string word) {
+			Node *n = head->next;
+
+			while (n != nullptr) {
+				if (n->INFO.compare(word) == 0) {
+					return n;
+				}
+				n = n->next;
+			}
+			return nullptr;
+		}
+
+		pair<string, int> findMostFrekventWord() {
+			pair<string, int> a;
+			string word = "";
+			int antal = 0;
+
+			unordered_list::iterator it = begin();
+			for (it = begin(); it != end(); ++it) {
+				if (it->antal > antal) {
+					a.first = it->INFO;
+					a.second = it->antal;
+					antal = it->antal;
+				}
+			}
+			return a;
+		}
+
+		void ReadFromFile() {
+			ifstream in;
+			string row, word;
+			int antal = 0;
+
+			try {
+				in.open("nils_holgersson.txt");
+				if (!in.good()) {
+					cout << "Gick ej att öppna filen!" << endl;
+				}
+
+				else {
+					clear();
+
+					while (getline(in, row)) {
+						istringstream iss(row);
+						while (getline(iss, word, ' ')) {
+							word = words::stringManipulation(word);
+							add(word);
+						}
+					}
+				}
+				in.close();
+			}
+
+			catch (exception e) {
+
+			}
+
+		}
 
 		
 #pragma endregion Medlemsfunktioner
