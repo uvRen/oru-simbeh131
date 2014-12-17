@@ -1,7 +1,13 @@
+#include <iostream>
+#include <ostream>
+
+using namespace std;
+
 namespace Betyg5 {
 
 	template<class KEY, class VALUE>
-	struct Node {
+	class Node {
+	public:
 		KEY key;
 		VALUE value;
 		Node<KEY, VALUE> *next;
@@ -15,6 +21,11 @@ namespace Betyg5 {
 			this->value = value;
 			next = nullptr;
 		}
+
+		friend ostream& operator<<(ostream &ut, const Node<KEY, VALUE> &n) {
+			ut << '[' << n.key << ',' << n.value << ',' << n.next << ']';
+			return ut;
+		}
 	};
 
 	template<class KEY, class VALUE>
@@ -23,7 +34,6 @@ namespace Betyg5 {
 		Node<KEY, VALUE> *head;
 		vector <Node<KEY, VALUE>> *table;
 
-
 	public:
 		HashTable(int tableSize) {
 			head = nullptr;
@@ -31,6 +41,12 @@ namespace Betyg5 {
 			table = new vector <Node<KEY, VALUE>>(tableSize);
 			for (auto &a : *table) {
 				a = Node<KEY, VALUE>();
+			}
+		}
+
+		void size() {
+			for (auto &a : *table) {
+				cout << a << endl;
 			}
 		}
 	};
