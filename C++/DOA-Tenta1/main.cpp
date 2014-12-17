@@ -1,6 +1,7 @@
 #include <iostream>
 #include <deque>
 #include <string>
+#include <vector>
 #include <clocale>
 #include "statistics.h"
 #include "words.h"
@@ -159,6 +160,12 @@ int main() {
 	//main4();
 
 	Betyg5::HashTable<string, string> h(769);
+
+	h.size();
+
+
+
+
 
 	system("pause");
 	return 0;
