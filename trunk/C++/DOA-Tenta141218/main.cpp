@@ -17,7 +17,7 @@ struct measurement
 void main3_1() {
 	const int MAX = 100000; //Indatats storlek n
 	const int DELTA = MAX / 10; //
-	const int nLoop = 100000; //Antal varv i testloopen för medelvärdesutjämning
+	const int nLoop = 10000; //Antal varv i testloopen för medelvärdesutjämning
 	//PROVA: Lågt värde 100, stort värde 10000
 	//       Vad kan påverka.
 
@@ -41,20 +41,21 @@ void main3_1() {
 		t0 = w.elapsedUs();
 
 		w.restart();
+		volatile double sum = 0;
 		for (int i = 0; i < nLoop; i++) {
-			Betyg3_1::Rekursion::summa(100, 60);
+			sum = Betyg3_1::Rekursion::summa(100, 60);
 		}
 		t1 = w.elapsedUs();
 
 		double time = ((t1 - t0).count() / (double)nLoop);
-		std::cout << setw(20) << size << setw(20) << time*100 << endl;
+		std::cout << setw(20) << size << setw(20) << time << endl;
 		std::cout.flush();
 
 		measurement m = { size, time };
 		vTime.push_back(m);
 
 	}
-	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000.0) << "ms" << endl;
+	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000) << "ms" << endl;
 
 	wStartEnd.restart();
 	vTime.clear();
@@ -67,8 +68,9 @@ void main3_1() {
 		t0 = w.elapsedUs();
 
 		w.restart();
+		volatile double sum = 0;
 		for (int i = 0; i < nLoop; i++) {
-			Betyg3_1::Rekursion::summaRek(100, 60);
+			sum = Betyg3_1::Rekursion::summaRek(100, 60);
 		}
 		t1 = w.elapsedUs();
 
@@ -93,6 +95,9 @@ void main3_2() {
 }
 
 int main() {
+
+	cout << "Summa: " << Betyg3_1::Rekursion::summa(2, 2) << endl;
+	cout << "SummaRek: " << Betyg3_1::Rekursion::summaRek(2, 2) << endl;
 	
 	//main3_1();
 	//main3_2();
