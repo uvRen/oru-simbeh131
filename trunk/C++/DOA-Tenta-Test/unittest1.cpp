@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "../bounded_list/bounded_list.h"
+#include "../DOA-Tenta141218/bounded_vector.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -10,7 +10,7 @@ namespace DOATentaTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(Test)
 		{
 			// TODO: Your test code here
 		}

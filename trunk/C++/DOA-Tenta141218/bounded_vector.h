@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace Betyg4 {
-#pragma region Node
+
 	class Node {
 	public:
 		char c;
@@ -20,13 +20,13 @@ namespace Betyg4 {
 			antal = 1;
 		}
 	};
-#pragma endregion Node
+
 	class bounded_list {
 	private:
 		Node *head;
 
 	public:
-#pragma region Konstruktor
+
 		bounded_list() {
 			head = new Node();
 			head->next = nullptr;
@@ -39,10 +39,6 @@ namespace Betyg4 {
 				head->next = ny;
 			}
 		}
-#pragma endregion Konstruktor
-
-#pragma region Medlemsfunktioner
-
 
 		void printList() {
 			Node *n = head->next;
@@ -51,6 +47,6 @@ namespace Betyg4 {
 				n = n->next;
 			}
 		}
-#pragma endregion Medlemsfunktioner
+
 	};
 }
