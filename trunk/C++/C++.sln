@@ -51,6 +51,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hash", "Hash\Hash.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DOA-Tenta141218", "DOA-Tenta141218\DOA-Tenta141218.vcxproj", "{70D625F3-EEC1-45B1-8531-4EF9E4ECD817}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DOA-Tenta-Test", "DOA-Tenta-Test\DOA-Tenta-Test.vcxproj", "{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -305,6 +307,16 @@ Global
 		{70D625F3-EEC1-45B1-8531-4EF9E4ECD817}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{70D625F3-EEC1-45B1-8531-4EF9E4ECD817}.Release|Win32.ActiveCfg = Release|Win32
 		{70D625F3-EEC1-45B1-8531-4EF9E4ECD817}.Release|Win32.Build.0 = Release|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Debug|Win32.Build.0 = Debug|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Release|Any CPU.ActiveCfg = Release|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Release|Win32.ActiveCfg = Release|Win32
+		{6297D4CB-AE40-45DE-B3C7-8B86DDF1B29B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
