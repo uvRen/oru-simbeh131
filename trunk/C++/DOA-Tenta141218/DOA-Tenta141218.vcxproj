@@ -64,7 +64,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="hr_time.h" />
     <ClInclude Include="Rekursion.h" />
+    <ClInclude Include="Watch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

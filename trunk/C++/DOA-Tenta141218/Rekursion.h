@@ -18,7 +18,9 @@ namespace Betyg3 {
 			if (n == 0) {
 				return 1;
 			}
-			return n * fakRek(n - 1);
+			else {
+				return n * fakRek(n - 1);
+			}
 		}
 
 		static double summa(double x, int n) {
@@ -30,13 +32,15 @@ namespace Betyg3 {
 		}
 
 		static double summaRek(double x, int n) {
-			if (n == 1) {
-				return pow(x, n)+1;
+			if (n == 0) {
+				return 1;
 			}
-			double sum = 0;
-			sum = pow(x, n) / fakRek(n);
+			else {
+				double sum = 0;
+				sum = pow(x, n) / fakRek(n);
 
-			return (sum + summaRek(x, fakRek(n-1)));
+				return sum + summaRek(x, fakRek(n - 1));
+			}
 		}
 	};
 
