@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Rekursion.h"
+#include "IP.h"
 #include "hr_time.h"
 #include "Watch.h"
 #include <vector>
@@ -13,7 +14,7 @@ struct measurement
 	double time;
 };
 
-int main() {
+void main3_1() {
 	const int MAX = 10000; //Indatats storlek n
 	const int DELTA = MAX / 10; //
 	const int nLoop = 10000; //Antal varv i testloopen för medelvärdesutjämning
@@ -43,7 +44,7 @@ int main() {
 		w.restart();
 		for (int i = 0; i < nLoop; i++)
 		{
-			Betyg3::Rekursion::summa(100, 60);
+			Betyg3_1::Rekursion::summa(100, 60);
 		}
 		t1 = w.elapsedUs();
 
@@ -60,32 +61,48 @@ int main() {
 	/*vTime.clear();
 	for (int size = DELTA; size <= MAX; size = size + DELTA)
 	{
-		Tid i tom loop
-		w.restart();
-		for (int i = 0; i < nLoop; i++)
-		{
-			;
-		}
-		t0 = w.elapsedUs();
+	Tid i tom loop
+	w.restart();
+	for (int i = 0; i < nLoop; i++)
+	{
+	;
+	}
+	t0 = w.elapsedUs();
 
-		w.restart();
-		for (int i = 0; i < nLoop; i++)
-		{
-			Betyg3::Rekursion::summaRek(100, 60);
-		}
-		t1 = w.elapsedUs();
+	w.restart();
+	for (int i = 0; i < nLoop; i++)
+	{
+	Betyg3::Rekursion::summaRek(100, 60);
+	}
+	t1 = w.elapsedUs();
 
-		double time = ((t1 - t0).count() / (double)nLoop);
-		std::cout << setw(20) << size << setw(20) << time << endl;
-		std::cout.flush();
+	double time = ((t1 - t0).count() / (double)nLoop);
+	std::cout << setw(20) << size << setw(20) << time << endl;
+	std::cout.flush();
 
-		measurement m = { size, time };
-		vTime.push_back(m);
+	measurement m = { size, time };
+	vTime.push_back(m);
 
 	}
 	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000.0) << "ms" << endl;*/
 
-	cout << "SummaRek: " << Betyg3::Rekursion::summaRek(100, 10) << endl;
+	cout << "SummaRek: " << Betyg3_1::Rekursion::summaRek(100, 10) << endl;
+}
+
+int main() {
+	
+	//main3_1();
+
+	Betyg3_2::Lista nummer;
+
+	nummer.Add("simon");
+	nummer.Add("simon");
+	nummer.Add("hej");
+
+	
+	nummer.ReadFromFile();
+	nummer.printList();
+
 
 	system("pause");
 	return 0;
