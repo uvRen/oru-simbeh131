@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="hr_time.h" />
+    <ClInclude Include="IP.h" />
     <ClInclude Include="Rekursion.h" />
     <ClInclude Include="Watch.h" />
   </ItemGroup>

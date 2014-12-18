@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Betyg3 {
+namespace Betyg3_1 {
 	class Rekursion {
 	public:
 		static int fak(int n) {
