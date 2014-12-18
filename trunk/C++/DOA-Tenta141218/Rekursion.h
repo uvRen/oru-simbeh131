@@ -6,7 +6,7 @@ using namespace std;
 namespace Betyg3_1 {
 	class Rekursion {
 	public:
-		static int fak(int n) {
+		/*static int fak(int n) {
 			int sum = 1;
 			for (int i = n; i > 0; i--) {
 				sum = sum*i;
@@ -15,7 +15,7 @@ namespace Betyg3_1 {
 		}
 
 		static int fakRek(int n) {
-			if (n == 0) {
+			if (n <= 1) {
 				return 1;
 			}
 			else {
@@ -41,7 +41,36 @@ namespace Betyg3_1 {
 
 				return sum + summaRek(x, fakRek(n - 1));
 			}
+		}*/
+
+		static int rekFak(int i)
+		{
+			if (i <= 1)
+				return 1;
+			else
+				return i * rekFak(i - 1);
 		}
+
+		static int fak(int i)
+		{
+			int sum = 1;
+			for (int n = 2; n <= i; n++) {
+				sum *= n;
+			}
+			return sum;
+		}
+
+		static double summaRek(int x, int i)
+		{
+			return pow(x, i) / rekFak(i);
+		}
+
+		static double summa(int x, int i)
+		{
+			return pow(x, i) / fak(i);
+		}
+
+
 	};
 
 }

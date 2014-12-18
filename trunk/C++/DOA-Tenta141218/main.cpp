@@ -26,24 +26,22 @@ void main3_1() {
 	Course::Watch  w, wStartEnd;
 	Course::microseconds t0, t1;
 
-	wStartEnd.restart();
 	cout.precision(2);
 	cout.setf(ios::fixed);
 
+	wStartEnd.restart();
 	vTime.clear();
 	for (int size = DELTA; size <= MAX; size = size + DELTA)
 	{
 		//Tid i tom loop
 		w.restart();
-		for (int i = 0; i < nLoop; i++)
-		{
+		for (int i = 0; i < nLoop; i++) {
 			;
 		}
 		t0 = w.elapsedUs();
 
 		w.restart();
-		for (int i = 0; i < nLoop; i++)
-		{
+		for (int i = 0; i < nLoop; i++) {
 			Betyg3_1::Rekursion::summa(100, 60);
 		}
 		t1 = w.elapsedUs();
@@ -58,51 +56,47 @@ void main3_1() {
 	}
 	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000.0) << "ms" << endl;
 
-	/*vTime.clear();
-	for (int size = DELTA; size <= MAX; size = size + DELTA)
-	{
-	Tid i tom loop
-	w.restart();
-	for (int i = 0; i < nLoop; i++)
-	{
-	;
-	}
-	t0 = w.elapsedUs();
+	wStartEnd.restart();
+	vTime.clear();
+	for (int size = DELTA; size <= MAX; size = size + DELTA) {
+		//Tid i tom loop
+		w.restart();
+		for (int i = 0; i < nLoop; i++) {
+			;
+		}
+		t0 = w.elapsedUs();
 
-	w.restart();
-	for (int i = 0; i < nLoop; i++)
-	{
-	Betyg3::Rekursion::summaRek(100, 60);
-	}
-	t1 = w.elapsedUs();
+		w.restart();
+		for (int i = 0; i < nLoop; i++) {
+			Betyg3_1::Rekursion::summaRek(100, 60);
+		}
+		t1 = w.elapsedUs();
 
-	double time = ((t1 - t0).count() / (double)nLoop);
-	std::cout << setw(20) << size << setw(20) << time << endl;
-	std::cout.flush();
+		double time = ((t1 - t0).count() / (double)nLoop);
+		std::cout << setw(20) << size << setw(20) << time << endl;
+		std::cout.flush();
 
-	measurement m = { size, time };
-	vTime.push_back(m);
+		measurement m = { size, time };
+		vTime.push_back(m);
 
 	}
-	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000.0) << "ms" << endl;*/
+	std::cout << "Totalt åtgången tid: " << (wStartEnd.elapsedUs().count() / 1000.0) << "ms" << endl;
+}
 
-	cout << "SummaRek: " << Betyg3_1::Rekursion::summaRek(100, 10) << endl;
+void main3_2() {
+	Betyg3_2::Lista nummer;
+
+	nummer.ReadFromFile();
+	nummer.sortList();
+	nummer.ipHasConnections("154.152.141.166");
+	nummer.maxConnections();
 }
 
 int main() {
 	
-	//main3_1();
-
-	Betyg3_2::Lista nummer;
-
+	main3_1();
+	//main3_2();
 	
-	nummer.ReadFromFile();
-	nummer.sortList();
-	nummer.printList();
-
-
-
-
 	system("pause");
 	return 0;
 
