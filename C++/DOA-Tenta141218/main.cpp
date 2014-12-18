@@ -95,13 +95,12 @@ int main() {
 
 	Betyg3_2::Lista nummer;
 
-	nummer.Add("simon");
-	nummer.Add("simon");
-	nummer.Add("hej");
-
 	
 	nummer.ReadFromFile();
+	nummer.sortList();
 	nummer.printList();
+
+
 
 
 	system("pause");
