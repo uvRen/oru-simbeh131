@@ -18,6 +18,12 @@
     <ClInclude Include="Rekursion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Watch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hr_time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
