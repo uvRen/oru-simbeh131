@@ -15,9 +15,9 @@ struct measurement
 };
 
 void main3_1() {
-	const int MAX = 10000; //Indatats storlek n
+	const int MAX = 100000; //Indatats storlek n
 	const int DELTA = MAX / 10; //
-	const int nLoop = 10000; //Antal varv i testloopen för medelvärdesutjämning
+	const int nLoop = 100000; //Antal varv i testloopen för medelvärdesutjämning
 	//PROVA: Lågt värde 100, stort värde 10000
 	//       Vad kan påverka.
 
@@ -47,7 +47,7 @@ void main3_1() {
 		t1 = w.elapsedUs();
 
 		double time = ((t1 - t0).count() / (double)nLoop);
-		std::cout << setw(20) << size << setw(20) << time << endl;
+		std::cout << setw(20) << size << setw(20) << time*100 << endl;
 		std::cout.flush();
 
 		measurement m = { size, time };
@@ -73,7 +73,7 @@ void main3_1() {
 		t1 = w.elapsedUs();
 
 		double time = ((t1 - t0).count() / (double)nLoop);
-		std::cout << setw(20) << size << setw(20) << time << endl;
+		std::cout << setw(20) << size << setw(20) << time*100 << endl;
 		std::cout.flush();
 
 		measurement m = { size, time };
@@ -94,7 +94,7 @@ void main3_2() {
 
 int main() {
 	
-	main3_1();
+	//main3_1();
 	//main3_2();
 	
 	system("pause");
