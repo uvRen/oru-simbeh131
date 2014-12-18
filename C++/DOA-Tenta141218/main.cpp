@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Rekursion.h"
 #include "IP.h"
+#include "bounded_vector.h"
 #include "hr_time.h"
 #include "Watch.h"
 #include <vector>
@@ -95,12 +96,12 @@ void main3_2() {
 }
 
 int main() {
-
-	cout << "Summa: " << Betyg3_1::Rekursion::summa(2, 2) << endl;
-	cout << "SummaRek: " << Betyg3_1::Rekursion::summaRek(2, 2) << endl;
-	
 	//main3_1();
 	//main3_2();
+
+	Betyg4::bounded_list list;
+
+	list.printList();
 	
 	system("pause");
 	return 0;

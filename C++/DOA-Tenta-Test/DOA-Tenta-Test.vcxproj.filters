@@ -15,24 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Rekursion.h">
+    <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Watch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hr_time.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IP.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bounded_vector.h">
+    <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unittest1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
