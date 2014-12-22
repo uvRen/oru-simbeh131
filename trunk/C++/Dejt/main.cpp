@@ -19,7 +19,7 @@ void testInterestTable() {
 }
 
 void testPerson() {
-	Person p("Simon Berntsson");
+	Person p("Simon Berntsson", "male");
 
 	p.AddInterest("sport");
 	p.AddInterest("data");
@@ -28,13 +28,14 @@ void testPerson() {
 	cout << p.toString() << endl;
 }
 
+void testPersonList() {
+
+}
+
 int main() {
-	cout << "testInterestTable():" << endl;
-	testInterestTable();
-	cout << endl << endl;
-	cout << "testPerson():" << endl;
 	testPerson();
-	cout << endl << endl;
+	testInterestTable();
+
 	
 
 	system("pause");

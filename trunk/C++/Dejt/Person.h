@@ -16,10 +16,19 @@ public:
 	Person(string namn, string gender) {
 		this->namn = namn;
 		this->gender = gender;
-
 	}
 
 	//funktioner
+	Person& operator=(const Person &p) {
+		this->namn = p.namn;
+		this->gender = p.gender;
+		return *this;
+	}
+
+	string getGender() {
+		return this->gender;
+	}
+
 	void AddInterest(string intresse) {
 		this->intresse.AddInterest(intresse);
 	}
