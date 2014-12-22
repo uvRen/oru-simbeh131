@@ -13,5 +13,13 @@ public:
 	}
 
 	//funktioner
-
+	void AddPerson(Person p) {
+		//om det är en man
+		if (p.getGender().compare("male") == 0) {
+			boys.push_front(p);
+		}
+		else {
+			girls.push_front(p);
+		}
+	}
 };
