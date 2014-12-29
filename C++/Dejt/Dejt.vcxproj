@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Couple.h" />
+    <ClInclude Include="CoupleList.h" />
     <ClInclude Include="InterestTable.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PersonList.h" />
