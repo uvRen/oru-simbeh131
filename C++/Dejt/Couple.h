@@ -1,3 +1,4 @@
+#pragma once
 #include "Person.h"
 
 class Couple {
@@ -11,7 +12,18 @@ public:
 		
 	}
 
+	Couple(Person male, Person female) {
+		this->male = male;
+		this->female = female;
+	}
+
 	//funktioner
+	Couple& operator=(Couple &c) {
+		this->male = c.male;
+		this->female = c.female;
+		return *this;
+	}
+
 	void setMaleCouple(Person p) {
 		this->male = p;
 	}

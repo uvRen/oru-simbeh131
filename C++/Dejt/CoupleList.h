@@ -1,3 +1,4 @@
+#pragma once
 #include "Couple.h"
 #include "PersonList.h"
 #include "Person.h"
@@ -13,5 +14,7 @@ public:
 	}
 
 	//funktioner
-
+	void AddCouple(Couple c) {
+		this->lista.push_front(c);
+	}
 };
