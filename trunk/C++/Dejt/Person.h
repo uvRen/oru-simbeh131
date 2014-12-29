@@ -26,14 +26,17 @@ public:
 		return *this;
 	}
 
+	//returner vilken kön personen är
 	string getGender() {
 		return this->gender;
 	}
 
+	//lägger till ett nytt intresse till en person
 	void AddInterest(string intresse) {
 		this->intresse.AddInterest(intresse);
 	}
 	
+	//läser in uppgifter om en person från konsolfönstret
 	void Read() {
 		string input;
 		cout << "Name: ";
@@ -54,6 +57,7 @@ public:
 
 	}
 
+	//returnerar en sträng med all information om en person
 	string toString() {
 		ostringstream ut;
 
@@ -62,6 +66,7 @@ public:
 		return ut.str();
 	}
 
+	//överlagrar operatorn << för objektet 'Person'
 	friend ostream& operator<<(ostream &ut, Person &p) {
 		ut << p.toString();
 		return ut;

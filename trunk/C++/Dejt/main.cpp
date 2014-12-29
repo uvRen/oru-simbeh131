@@ -43,6 +43,7 @@ void testPersonList() {
 	lista.AddPerson(p2);
 
 	lista.printList();
+	lista.WriteToFile();
 }
 
 int main() {
