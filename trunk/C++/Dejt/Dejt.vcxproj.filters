@@ -32,5 +32,8 @@
     <ClInclude Include="Couple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoupleList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

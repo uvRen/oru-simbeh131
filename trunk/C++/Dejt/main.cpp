@@ -3,6 +3,8 @@
 #include "InterestTable.h"
 #include "Person.h"
 #include "PersonList.h"
+#include "Couple.h"
+#include "CoupleList.h"
 
 void testInterestTable() {
 	InterestTable intresse;
@@ -46,11 +48,22 @@ void testPersonList() {
 	lista.WriteToFile();
 }
 
+void testCouple() {
+	Person p("Simon Berntsson", "male"), p2("Bella Johnsson", "female");
+	/*p.AddInterest("hej");
+	p2.AddInterest("hejsan");*/
+
+	Couple c(p, p2);
+
+	/*c.setMaleCouple(p);
+	c.setFemaleCouple(p2);*/
+}
+
 int main() {
 	//testPerson();
 	//testInterestTable();
-	testPersonList();
-	
+	//testPersonList();
+	testCouple();
 
 	system("pause");
 	return 0;
