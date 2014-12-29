@@ -18,8 +18,19 @@ public:
 		if (p.getGender().compare("male") == 0) {
 			boys.push_front(p);
 		}
-		else {
+		else if(p.getGender().compare("female") == 0) {
 			girls.push_front(p);
+		}
+	}
+
+	void printList() {
+		cout << "Male:" << endl;
+		for (auto &a : boys) {
+			cout << a << endl;
+		}
+		cout << "Female:" << endl;
+		for (auto &a : girls) {
+			cout << a << endl;
 		}
 	}
 };
