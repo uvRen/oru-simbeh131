@@ -2,6 +2,7 @@
 #include <string>
 #include "InterestTable.h"
 #include "Person.h"
+#include "PersonList.h"
 
 void testInterestTable() {
 	InterestTable intresse;
@@ -19,23 +20,35 @@ void testInterestTable() {
 }
 
 void testPerson() {
-	Person p("Simon Berntsson", "male");
+	Person p("Simon Berntsson", "male"), p2;
 
 	p.AddInterest("sport");
 	p.AddInterest("data");
 	p.AddInterest("godis");
 
+	p2.Read();
+
 	cout << p.toString() << endl;
+	cout << p2.toString() << endl;
 }
 
 void testPersonList() {
+	PersonList lista;
+	Person p1, p2, p3, p4;
 
+	p1.Read();
+	p2.Read();
+
+	lista.AddPerson(p1);
+	lista.AddPerson(p2);
+
+	lista.printList();
 }
 
 int main() {
-	testPerson();
-	testInterestTable();
-
+	//testPerson();
+	//testInterestTable();
+	testPersonList();
 	
 
 	system("pause");

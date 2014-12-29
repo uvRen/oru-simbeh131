@@ -26,7 +26,7 @@ public:
 		for (forward_list<string>::iterator it = intresse.begin(); it != intresse.end(); ++it) {
 			ut << *it;
 			check = it;
-			check++;
+			check = check + 1;
 			if (check != intresse.end()) {
 				ut << ',';
 			}
@@ -48,7 +48,7 @@ public:
 		for (forward_list<string>::iterator it = intresse.begin(); it != intresse.end(); ++it) {
 			ut << *it;
 			check = it;
-			check++;
+			check = check + 1;
 			if (check != intresse.end()) {
 				ut << ',';
 			}

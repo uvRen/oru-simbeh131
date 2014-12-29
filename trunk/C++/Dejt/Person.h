@@ -19,9 +19,10 @@ public:
 	}
 
 	//funktioner
-	Person& operator=(const Person &p) {
+	Person& operator=(Person &p) {
 		this->namn = p.namn;
 		this->gender = p.gender;
+		this->intresse = p.intresse;
 		return *this;
 	}
 
@@ -33,11 +34,37 @@ public:
 		this->intresse.AddInterest(intresse);
 	}
 	
+	void Read() {
+		string input;
+		cout << "Name: ";
+		getline(cin, input);
+		this->namn = input;
+
+		cout << "Gender: ";
+		getline(cin, input);
+		this->gender = input;
+
+		cout << "Interest: ";
+		getline(cin, input);
+
+		istringstream iss(input);
+		while (getline(iss, input, ',')) {
+			AddInterest(input);
+		}
+
+	}
+
 	string toString() {
 		ostringstream ut;
 
-		ut << namn << '=' << intresse.toString() << endl;
+		ut << namn << '=' << intresse.toString();
 
 		return ut.str();
 	}
+
+	friend ostream& operator<<(ostream &ut, Person &p) {
+		ut << p.toString();
+		return ut;
+	}
+
 };
