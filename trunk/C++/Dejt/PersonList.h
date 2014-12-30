@@ -13,6 +13,11 @@ public:
 	}
 
 	//funktioner
+	//rensar listan på poster
+	void clear() {
+		boys.clear();
+		girls.clear();
+	}
 	//lägger till en person i personlistan.
 	void AddPerson(Person p) {
 		//om det är en man
@@ -53,6 +58,31 @@ public:
 			ut << a << endl;
 		}
 		ut.close();
+	}
 
+	//läser alla män och kvinnor från fil och placerar de i vectorn
+	void ReadFromFile() {
+		ifstream in;
+		string filnamn = "Males.txt", row;
+
+		try {
+			in.open(filnamn);
+			if (!in.good()) {
+				cout << "Kunde inte öppna filen!" << endl;
+			}
+			else {
+				clear();
+				while (getline(in, row)) {
+					Person p;
+					istringstream iss(row);
+					iss >> p;
+					p.setGender("male");
+					AddPerson(p);
+				}
+			}
+		}
+		catch (exception e) {
+			cout << e.what() << endl;
+		}
 	}
 };
