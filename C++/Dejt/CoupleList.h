@@ -14,6 +14,7 @@ public:
 	}
 
 	//funktioner
+	//lägger till ett par till listan
 	void AddCouple(Couple c) {
 		this->lista.push_front(c);
 	}

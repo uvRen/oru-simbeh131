@@ -31,6 +31,11 @@ public:
 		return this->gender;
 	}
 
+	//anger ett kön till personen
+	void setGender(string gender) {
+		this->gender = gender;
+	}
+
 	//lägger till ett nytt intresse till en person
 	void AddInterest(string intresse) {
 		this->intresse.AddInterest(intresse);
@@ -70,6 +75,20 @@ public:
 	friend ostream& operator<<(ostream &ut, Person &p) {
 		ut << p.toString();
 		return ut;
+	}
+
+	friend istream& operator>>(istream &in, Person &p) {
+		string s;
+		getline(in, p.namn, '=');
+		getline(in, s, '[');
+		getline(in, s, ']');
+		istringstream iss(s);
+
+		while (getline(iss, s, ',')) {
+			p.intresse.AddInterest(s);
+		}
+		return in;
+
 	}
 
 };

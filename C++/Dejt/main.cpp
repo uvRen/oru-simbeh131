@@ -50,20 +50,38 @@ void testPersonList() {
 
 void testCouple() {
 	Person p("Simon Berntsson", "male"), p2("Bella Johnsson", "female");
-	/*p.AddInterest("hej");
-	p2.AddInterest("hejsan");*/
+	p.AddInterest("hej");
+	p2.AddInterest("hejsan");
 
 	Couple c(p, p2);
 
-	/*c.setMaleCouple(p);
-	c.setFemaleCouple(p2);*/
+	c.setMaleCouple(p);
+	c.setFemaleCouple(p2);
+}
+
+void testInstreamPerson() {
+	Person p;
+	istringstream iss("Simon Berntsson=[hej1,hej2,hej3]");
+
+	iss >> p;
+
+	cout << p.toString() << endl;
+}
+
+void testPersonListReadFromFile() {
+	PersonList lista;
+
+	lista.ReadFromFile();
+	lista.printList();
 }
 
 int main() {
 	//testPerson();
 	//testInterestTable();
 	//testPersonList();
-	testCouple();
+	//testCouple();
+	//testInstreamPerson();
+	testPersonListReadFromFile();
 
 	system("pause");
 	return 0;
