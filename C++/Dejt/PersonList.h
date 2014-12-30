@@ -80,6 +80,23 @@ public:
 					AddPerson(p);
 				}
 			}
+			in.close();
+			filnamn = "Females.txt";
+
+			in.open(filnamn);
+			if (!in.good()) {
+				cout << "Kunde inte öppna filen!" << endl;
+			}
+			else {
+				while (getline(in, row)) {
+					Person p;
+					istringstream iss(row);
+					iss >> p;
+					p.setGender("female");
+					AddPerson(p);
+				}
+			}
+			in.close();
 		}
 		catch (exception e) {
 			cout << e.what() << endl;

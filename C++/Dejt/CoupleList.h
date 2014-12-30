@@ -18,4 +18,8 @@ public:
 	void AddCouple(Couple c) {
 		this->lista.push_front(c);
 	}
+
+	void findMatchingCouple(PersonList lista) {
+
+	}
 };
