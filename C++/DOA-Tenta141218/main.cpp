@@ -99,9 +99,9 @@ int main() {
 	//main3_1();
 	//main3_2();
 
-	Betyg4::bounded_list list;
-
-	list.printList();
+	Betyg4::bounded_vector list('a', 'z');
+	
+	list.print();
 	
 	system("pause");
 	return 0;
