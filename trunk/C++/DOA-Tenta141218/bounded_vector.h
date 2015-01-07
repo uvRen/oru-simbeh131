@@ -14,13 +14,14 @@ namespace Betyg4 {
 	public:
 		//konstruktor
 		bounded_vector() {
-			lowIndex = highIndex = *vptr = size = -1;
+			vptr = nullptr;
+			lowIndex = highIndex = size = -1;
 		}
 
 		bounded_vector(int lowIndex, int highIndex) {
 			this->highIndex = highIndex;
 			this->lowIndex = lowIndex;
-			this->size = highIndex - (lowIndex + 1);
+			this->size = highIndex - lowIndex + 1;
 
 			vptr = new int[size];
 			for (int i = 0; i < size; i++) {
@@ -64,13 +65,29 @@ namespace Betyg4 {
 			}
 			bounded_vector a(left.lowIndex, left.highIndex);
 			for (int i = 0; i < left.size; i++) {
-				a[i].vptr = left[i].vptr + right[i].vptr;
+				a.vptr[i] = left.vptr[i] + right.vptr[i];
 			}
 
 			return a;
-
 		}
 
+		int total_sum() {
+			int summa = 0;
+
+			for (int i = 0; i < this->size; i++) {
+				summa += this->vptr[i];
+			}
+			return summa;
+		}
+
+		void print() {
+			char c = lowIndex;
+
+			for (int i = 0; i < size; i++) {
+				cout << c << ": " << this->vptr[i] << endl;
+				c++;
+			}
+		}
 		
 	};
 	
