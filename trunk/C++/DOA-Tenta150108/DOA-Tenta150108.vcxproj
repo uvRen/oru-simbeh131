@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circular_list.h" />
+    <ClInclude Include="josephus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

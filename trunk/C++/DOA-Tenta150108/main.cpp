@@ -1,25 +1,15 @@
 #include "circular_list.h"
+#include "josephus.h"
 
 using namespace std;
 
 int main() {
 	Betyg4::circular_list lista;
+	Betyg41::josephus spel;
 
-	lista.add("hej1");
-	lista.add("hej2");
-	lista.add("hej3");
-	lista.add("hej4");
+	spel.addPersons();
 
-	//lista.testNext();
-
-	//lista.print();
-
-	Betyg4::circular_list lista2(lista);
-
-	cout << "Lista1:" << endl;
-	lista.print();
-	cout << endl << "Lista2:" << endl;
-	lista2.print();
+	spel.printPersons();
 
 	system("pause");
 	return 0;

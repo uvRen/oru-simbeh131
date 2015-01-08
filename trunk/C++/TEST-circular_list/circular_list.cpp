@@ -43,6 +43,27 @@ namespace TESTcircular_list
 			Assert::AreEqual(test, lista.front());
 		}
 
+		TEST_METHOD(ListaCount) {
+			Betyg4::circular_list lista;
+
+			lista.add("1");
+			lista.add("2");
+			lista.add("3");
+			lista.add("4");
+			lista.add("5");
+			lista.add("1");
+			lista.add("2");
+			lista.add("3");
+			lista.add("4");
+			lista.add("5");
+
+			Assert::AreEqual(10, lista.count());
+			lista.remove();
+			lista.remove();
+			lista.remove();
+			Assert::AreEqual(7, lista.count());
+		}
+
 		TEST_METHOD(ListaIterator) {
 			Betyg4::circular_list lista;
 

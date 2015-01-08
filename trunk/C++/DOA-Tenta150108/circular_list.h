@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -142,6 +143,17 @@ namespace Betyg4 {
 			Node *n = sentinel->next;
 			sentinel->next = sentinel->next->next;
 			delete n;
+		}
+
+		int count() {
+			int antal = 0;
+			Node *n = sentinel->next;
+
+			while (n != sentinel) {
+				antal++;
+				n = n->next;
+			}
+			return antal;
 		}
 
 		iterator begin() {
