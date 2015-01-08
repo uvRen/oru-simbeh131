@@ -35,9 +35,6 @@ namespace Betyg41 {
 			for (Betyg4::circular_list::iterator it = personer.begin() + 1; personer.count() > 1; ++it) {
 				if (it != personer.begin()) {
 					if (antal % 3 == 0) {
-						personer.print();
-						cout << endl << "Tar bort: " << *it << endl;
-						cout << endl;
 						personer.remove(*it);
 					}
 					antal++;
