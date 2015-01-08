@@ -10,14 +10,16 @@ int main() {
 	lista.add("hej3");
 	lista.add("hej4");
 
-	lista.print();
+	//lista.testNext();
 
-	/*Betyg4::circular_list lista2(lista);
+	//lista.print();
+
+	Betyg4::circular_list lista2(lista);
 
 	cout << "Lista1:" << endl;
 	lista.print();
-	cout << "Lista2:" << endl;
-	lista2.print();*/
+	cout << endl << "Lista2:" << endl;
+	lista2.print();
 
 	system("pause");
 	return 0;
