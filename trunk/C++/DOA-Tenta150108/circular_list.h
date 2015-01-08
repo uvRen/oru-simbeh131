@@ -186,7 +186,7 @@ namespace Betyg4 {
 				}
 				else if (count() == 2) {
 					if (sentinel->next->value.compare(namn) == 0) {
-						sentinel->next = sentinel->next->next;
+						sentinel->next = sentinel->next->next->next;
 					}
 					else {
 						sentinel->next->next = sentinel;
