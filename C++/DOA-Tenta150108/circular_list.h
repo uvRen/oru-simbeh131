@@ -76,19 +76,33 @@ namespace Betyg4 {
 		//kopieringkonstruktor
 		circular_list(const circular_list &obj) {
 			sentinel = new Node();
-			Node *n = obj.sentinel->next;
-			Node *ny = sentinel;
-			
-			while (n != sentinel) {
-				Node *add = new Node(n->value);
-				ny->next = add;
-				ny = ny->next;
+			Node *n = sentinel;
+			Node *old = obj.sentinel->next;
+
+			while (old != sentinel) {
+				n->next = new Node(old->value);
 				n = n->next;
+				old = old->next;
 			}
-			ny->next = sentinel;
+			n->next = sentinel;
 		}
 
 		//funktioner
+		circular_list& operator=(const circular_list &obj) {
+			sentinel = new Node();
+			Node *n = sentinel;
+			Node *old = obj.sentinel->next;
+
+			while (old != sentinel) {
+				n->next = new Node(old->value);
+				n = n->next;
+				old = old->next;
+			}
+			n->next = sentinel;
+
+			return *this;
+		}
+
 		void add(string value) {
 			Node *n = new Node(value);
 			Node *head = sentinel;
@@ -121,12 +135,13 @@ namespace Betyg4 {
 			for (circular_list::iterator it = begin()+1; it != begin(); ++it) {
 				cout << *it << " ";
 			}
-			/*Node *n = sentinel->next;
-			while (n != sentinel) {
-				cout << n->value << " ";
-				n = n->next;
-			}
-			cout << endl;*/
+		}
+
+		//tar bort första noden
+		void remove() {
+			Node *n = sentinel->next;
+			sentinel->next = sentinel->next->next;
+			delete n;
 		}
 
 		iterator begin() {
