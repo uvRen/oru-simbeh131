@@ -18,5 +18,14 @@ namespace TESTcircular_list
 			Assert::AreEqual(false, lista.empty());
 		}
 
+		TEST_METHOD(ListaAdd) {
+			Betyg4::circular_list lista;
+			string test = "";
+			Assert::AreEqual(test, lista.front());
+
+			lista.add("Hej");
+			test = "Hej";
+			Assert::AreEqual(test, lista.front());
+		}
 	};
 }
