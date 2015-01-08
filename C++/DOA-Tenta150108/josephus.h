@@ -16,15 +16,34 @@ namespace Betyg41 {
 		void addPersons() {
 			string input = "";
 
-			while (input.compare("0") != 0) {
+			while (true) {
 				cout << "Namn: ";
 				cin >> input;
+				if (input.compare("0") == 0) {
+					break;
+				}
 				personer.add(input);
 			}
 		}
 
 		void printPersons() {
 			personer.print();
+		}
+
+		string playGame() {
+			int antal = 1;
+			for (Betyg4::circular_list::iterator it = personer.begin() + 1; personer.count() > 1; ++it) {
+				if (it != personer.begin()) {
+					if (antal % 3 == 0) {
+						personer.print();
+						cout << endl << "Tar bort: " << *it << endl;
+						cout << endl;
+						personer.remove(*it);
+					}
+					antal++;
+				}
+			}
+			return personer.front();
 		}
 	};
 }

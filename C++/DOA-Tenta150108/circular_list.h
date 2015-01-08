@@ -140,9 +140,70 @@ namespace Betyg4 {
 
 		//tar bort första noden
 		void remove() {
+			if (sentinel->next != sentinel) {
+				if (sentinel->next->next == sentinel) {
+					sentinel->next = sentinel;
+				}
+				else {
+					Node *n = sentinel->next;
+					sentinel->next = sentinel->next->next;
+					delete n;
+				}
+			}
+		}
+
+		void remove(iterator position) {
+			Node *n = sentinel;
+			Node *before = new Node();
+
+			circular_list::iterator check = begin();
+
+			for (circular_list::iterator it = begin(); it != end(); ++it) {
+				if (count() == 1) {
+					sentinel->next = sentinel;
+				}
+				else {
+					check = it;
+					check = ++check;
+					if (check == position) {
+						before = n;
+					}
+					if (it == position) {
+						before->next = n->next;
+					}
+					n = n->next;
+				}
+			}
+		}
+
+		void remove(string namn) {
 			Node *n = sentinel->next;
-			sentinel->next = sentinel->next->next;
-			delete n;
+			Node *before = sentinel;
+
+			for (circular_list::iterator it = begin()+1; it != begin(); ++it) {
+				if (count() == 1) {
+					sentinel->next = sentinel;
+				}
+				else if (count() == 2) {
+					if (sentinel->next->value.compare(namn) == 0) {
+						sentinel->next = sentinel->next->next;
+					}
+					else {
+						sentinel->next->next = sentinel;
+					}
+				}
+				else {
+					if (n->value.compare(namn) == 0) {
+						before->next = n->next;
+					}
+					else {
+						n = n->next;
+						before = before->next;
+					}
+					
+
+				}
+			}
 		}
 
 		int count() {
