@@ -57,6 +57,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DOA-Tenta150108", "DOA-Tent
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST-circular_list", "TEST-circular_list\TEST-circular_list.vcxproj", "{61789028-A96C-4BFC-8F47-21E03430E1B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KylSim", "KylSim\KylSim.csproj", "{04C9232A-9514-45AE-A9DD-31B7430D9EFD}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -341,6 +343,16 @@ Global
 		{61789028-A96C-4BFC-8F47-21E03430E1B4}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{61789028-A96C-4BFC-8F47-21E03430E1B4}.Release|Win32.ActiveCfg = Release|Win32
 		{61789028-A96C-4BFC-8F47-21E03430E1B4}.Release|Win32.Build.0 = Release|Win32
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
