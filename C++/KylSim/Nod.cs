@@ -62,10 +62,44 @@ namespace KylSim
             return y;
         }
 
+        //ritar ut nodemn samt nodens namn
         public void writeNod()
         {
             Pen circle = new Pen(Color.Red);
+            Brush brush = new SolidBrush(Color.Black);
+            Font font = new Font("Courier", 8);
+            //ritar ut cirkeln
             canvas.DrawEllipse(circle, x, y, 10, 10);
+            //skriver ut namnet på noden
+            canvas.DrawString(name, font, brush, (float)x, (float)y-15);
+        }
+
+        //skriver ut trycket i noden
+        public void display()
+        {
+            Brush brush = new SolidBrush(Color.Black);
+            Font font = new Font("Courier", 8);
+            string tryck = "Tryck: " + pressure;
+            canvas.DrawString(tryck, font, brush, (float)x, (float)y + 15);
+        }
+
+        //
+        public void add_summaflode()
+        {
+
+        }
+
+        //reglerar trycket
+        public void dynamik()
+        {
+            if (adjustable)
+            {
+                if (sumFlow > 0)
+                    pressure += 0.1;
+                else if (sumFlow < 0)
+                    pressure -= 0.1;
+                sumFlow = 0;
+            }
         }
     }
 }
