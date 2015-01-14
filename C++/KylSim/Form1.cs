@@ -15,6 +15,8 @@ namespace KylSim
 
         public Form1() {
             this._canvas = this.CreateGraphics();
+            Nod n1 = new Nod(0.0, true, "N1", _canvas, 10, 10);
+            n1.writeNod();
             InitializeComponent();
         }
 
