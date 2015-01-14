@@ -14,6 +14,7 @@ namespace KylSim
         Graphics _canvas;
         Nod n1, n2, n3;
 
+        //konstruktor för fönstret
         public Form1() {
             this._canvas = CreateGraphics();
             InitializeComponent();
@@ -22,17 +23,19 @@ namespace KylSim
             n3 = new Nod(2.0, true, "N3",  _canvas, 200, 20);
         }
 
+        //när programmet startar
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            n1.writeNod();
-            n2.writeNod();
-            n3.writeNod();
+            n1.drawNod();
+            n2.drawNod();
+            n3.drawNod();
             n1.display();
             n2.display();
             n3.display();
 
         }
 
+        //exekveras en gång i sekunden
         private void Update_Dynamik_Summaflode_Tick(object sender, EventArgs e)
         {
             n1.display();

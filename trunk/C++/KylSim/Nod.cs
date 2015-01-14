@@ -55,7 +55,7 @@ namespace KylSim
         }
 
         //ritar ut nodemn samt nodens namn
-        public void writeNod()
+        public void drawNod()
         {
             Pen circle = new Pen(Color.Red);
             Brush brush = new SolidBrush(Color.Black);
