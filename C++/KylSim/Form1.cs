@@ -21,8 +21,8 @@ namespace KylSim
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e) {
-            Pen penna = new Pen(Color.Blue);
-            _canvas.DrawLine(penna, 0, 0, 640, 480);
+            Nod n1 = new Nod(0.0, true, "N1", _canvas, 10, 10);
+            n1.writeNod();
         }
     }
 }
