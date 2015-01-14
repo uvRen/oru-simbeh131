@@ -13,14 +13,16 @@ namespace KylSim
     public partial class Form1 : Form {
         Graphics _canvas;
         Nod n1, n2, n3;
+        Ventil v1;
 
         //konstruktor för fönstret
         public Form1() {
             this._canvas = CreateGraphics();
             InitializeComponent();
-            n1 = new Nod(0.0, true, "N1", _canvas, 200, 100);
-            n2 = new Nod(1.0, true, "N2", _canvas, 100, 200);
+            n1 = new Nod(0.0, true, "N1", _canvas, 50, 195);
+            n2 = new Nod(1.0, true, "N2", _canvas, 300, 195);
             n3 = new Nod(2.0, true, "N3",  _canvas, 200, 20);
+            v1 = new Ventil(10.0, "Ventil1", 200, 200, 200, 200, n1, n2, true, _canvas);
         }
 
         //när programmet startar
@@ -32,6 +34,7 @@ namespace KylSim
             n1.display();
             n2.display();
             n3.display();
+            v1.drawVentil();
 
         }
 
