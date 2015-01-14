@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace KylSim
 {
-    public class Nod : Form1
+    public class Nod
     {
         //variabler
         private double pressure;
@@ -21,16 +21,8 @@ namespace KylSim
         private double sumFlow = 0.0;
         private int x;
         private int y;
-
-        //default konstruktor
-        public Nod()
-        {
-            this.pressure = 0.0;
-            this.adjustable = false;
-            this.name = "";
-            this.x = 0;
-            this.y = 0;
-        }
+        private double inFlow = 0.0;
+        private double outFlow = 0.0;
 
         //konstruktor med parametrar
         public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y)
@@ -83,10 +75,10 @@ namespace KylSim
             canvas.DrawString(tryck, font, brush, (float)x, (float)y + 15);
         }
 
-        //
-        public void add_summaflode()
+        //ändar inflödet till noden
+        public void add_summaflode(double flow)
         {
-
+            this.inFlow = flow;
         }
 
         //reglerar trycket
