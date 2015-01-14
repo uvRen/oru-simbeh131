@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.Update_Dynamik_Summaflode = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // Update_Dynamik_Summaflode
+            // 
+            this.Update_Dynamik_Summaflode.Enabled = true;
+            this.Update_Dynamik_Summaflode.Interval = 1000;
+            this.Update_Dynamik_Summaflode.Tick += new System.EventHandler(this.Update_Dynamik_Summaflode_Tick);
             // 
             // Form1
             // 
@@ -43,6 +51,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer Update_Dynamik_Summaflode;
     }
 }
 
