@@ -17,6 +17,7 @@ namespace KylSim
         private double pressure;
         private bool adjustable;
         private string name;
+        private string old_str;
         private Graphics canvas;
         private double sumFlow = 0.0;
         private int x;
@@ -30,6 +31,7 @@ namespace KylSim
             this.pressure = pressure;
             this.adjustable = adjustable;
             this.name = name;
+            this.old_str = "";
             this.canvas = canvas;
             this.x = x;
             this.y = y;
@@ -61,7 +63,7 @@ namespace KylSim
             Brush brush = new SolidBrush(Color.Black);
             Font font = new Font("Courier", 8);
             //ritar ut cirkeln
-            canvas.DrawEllipse(circle, x, y, 10, 10);
+            canvas.DrawEllipse(circle, (float)x, (float)y, 10, 10);
             //skriver ut namnet på noden
             canvas.DrawString(name, font, brush, (float)x, (float)y-15);
         }
@@ -69,21 +71,38 @@ namespace KylSim
         //skriver ut trycket i noden
         public void display()
         {
-            Brush brush = new SolidBrush(Color.Black);
+            Brush brush = new SolidBrush(Color.Gainsboro);
             Font font = new Font("Courier", 8);
-            string tryck = "Tryck: " + pressure;
-            canvas.DrawString(tryck, font, brush, (float)x, (float)y + 15);
+            //skriver över det gamla värdet
+            string value = "Tryck: " + old_str;
+            canvas.DrawString(value, font, brush, (float)x, (float)y + 15);
+
+            //skriver ut det nya värdet
+            brush = new SolidBrush(Color.Black);
+            value = "Tryck: " + pressure;
+            canvas.DrawString(value, font, brush, (float)x, (float)y + 15);
         }
 
-        //ändar inflödet till noden
+        //ändrar inflödet till noden
         public void add_summaflode(double flow)
         {
-            this.inFlow = flow;
+            //utflöde
+            if (flow < 0)
+            {
+                this.outFlow = flow;
+            }
+            //inflöde
+            else
+            {
+                this.inFlow = flow;
+            }
+            this.sumFlow = this.inFlow + this.outFlow;
         }
 
         //reglerar trycket
         public void dynamik()
         {
+            this.old_str = pressure.ToString("0.0");
             if (adjustable)
             {
                 if (sumFlow > 0)
