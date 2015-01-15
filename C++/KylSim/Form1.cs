@@ -69,7 +69,7 @@ namespace KylSim
 
         private void contextMenuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
-
+            v1.menuClick(e.X, e.Y, this);
         }
     }
 }
