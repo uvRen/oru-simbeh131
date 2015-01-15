@@ -12,17 +12,20 @@ namespace KylSim
 {
     public partial class Form1 : Form {
         Graphics _canvas;
+
         Nod n1, n2, n3;
-        Ventil v1;
+        Ventil v1, v2;
+        int count = 0;
 
         //konstruktor för fönstret
         public Form1() {
             this._canvas = CreateGraphics();
             InitializeComponent();
-            n1 = new Nod(0.0, true, "N1", _canvas, 50, 195);
-            n2 = new Nod(1.0, true, "N2", _canvas, 300, 195);
-            n3 = new Nod(2.0, true, "N3",  _canvas, 200, 20);
-            v1 = new Ventil(10.0, "Ventil1", 200, 200, 200, 200, n1, n2, true, _canvas);
+            n1 = new Nod(5.0, false, "N1", _canvas, 10, 195);
+            n2 = new Nod(1.0, true, "N2", _canvas, 120, 195);
+            n3 = new Nod(1.0, false, "N3",  _canvas, 240, 195);
+            v1 = new Ventil(10.0, "Ventil1", 80, 200, n1, n2, true, _canvas, this.ContextMenuStrip);
+            v2 = new Ventil(10.0, "Ventil2", 200, 200, n2, n3, true, _canvas, this.ContextMenuStrip);
         }
 
         //när programmet startar
@@ -35,7 +38,7 @@ namespace KylSim
             n2.display();
             n3.display();
             v1.drawVentil();
-
+            v2.drawVentil();
         }
 
         //exekveras en gång i sekunden
@@ -43,10 +46,30 @@ namespace KylSim
         {
             n1.display();
             n1.dynamik();
+            v1.display();
+            v1.dynamik();
             n2.display();
             n2.dynamik();
+            v2.display();
+            v2.dynamik();
             n3.display();
             n3.dynamik();
+            if (count < 1)
+            {
+                v2.closeVentil();
+                count++;
+            }
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

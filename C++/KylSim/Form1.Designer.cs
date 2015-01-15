@@ -30,22 +30,51 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Update_Dynamik_Summaflode = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.öppnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stängToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Update_Dynamik_Summaflode
             // 
             this.Update_Dynamik_Summaflode.Enabled = true;
-            this.Update_Dynamik_Summaflode.Interval = 1000;
+            this.Update_Dynamik_Summaflode.Interval = 500;
             this.Update_Dynamik_Summaflode.Tick += new System.EventHandler(this.Update_Dynamik_Summaflode_Tick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.öppnaToolStripMenuItem,
+            this.stängToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.contextMenuStrip1_MouseDown);
+            // 
+            // öppnaToolStripMenuItem
+            // 
+            this.öppnaToolStripMenuItem.Name = "öppnaToolStripMenuItem";
+            this.öppnaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.öppnaToolStripMenuItem.Text = "Öppna";
+            // 
+            // stängToolStripMenuItem
+            // 
+            this.stängToolStripMenuItem.Name = "stängToolStripMenuItem";
+            this.stängToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stängToolStripMenuItem.Text = "Stäng";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 800);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(624, 442);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Kylsystem av Simon Berntsson";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -53,6 +82,9 @@
         #endregion
 
         private System.Windows.Forms.Timer Update_Dynamik_Summaflode;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem öppnaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stängToolStripMenuItem;
     }
 }
 
