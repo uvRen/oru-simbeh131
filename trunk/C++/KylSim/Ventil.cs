@@ -165,7 +165,7 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
-        public Ventil menuClick(int x, int y)
+        public Ventil menuClick(int x, int y, Control fonster)
         {
             return this;
         }
