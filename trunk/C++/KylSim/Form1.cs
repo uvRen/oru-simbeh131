@@ -17,7 +17,7 @@ namespace KylSim
         VVS klickad_ventil;
         VVS[] komponenter = new VVS[20];
         int count = 0;
-        int antal = 5;
+        int antal = 6;
 
         //konstruktor för fönstret
         public Form1() {
@@ -31,7 +31,7 @@ namespace KylSim
             komponenter[0] = new Nod(5.0, false, "N1", _canvas, 10, 195);
             komponenter[1] = new Nod(1.0, true, "N2", _canvas, 120, 195);
             komponenter[2] = new Nod(1.0, false, "N3",  _canvas, 240, 195);
-            komponenter[3] = new Ventil(10.0, "Ventil1", 80, 200, komponenter[3], komponenter[4], true, _canvas, this.contextMenuStrip1);
+            komponenter[3] = new Ventil(10.0, "Ventil1", 80, 200, komponenter[0], komponenter[1], true, _canvas, this.contextMenuStrip1);
             komponenter[4] = new Ventil(10.0, "Ventil2", 200, 200, komponenter[1], komponenter[2], true, _canvas, this.contextMenuStrip1);
             komponenter[5] = new Ventil(10.0, "Ventil3", 200, 100, komponenter[1], komponenter[2], true, _canvas, this.contextMenuStrip1);
         }
