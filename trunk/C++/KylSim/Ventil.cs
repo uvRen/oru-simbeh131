@@ -10,38 +10,36 @@ using System.Windows.Forms;
 
 namespace KylSim
 {
-    public class Ventil
+    public class Ventil : VVS
     {
         //variabler
         private double admittans;
-        private string name;
+        //private string name;
         private string old_str_pos;
         private string old_str_flow;
         private double ventPos;
-        private int x;
-        private int y;
-        private Nod input;
-        private Nod output;
+        //private int x;
+        //private int y;
+        //private Nod input;
+        //private Nod output;
+        private VVS input;
+        private VVS output;
         private double flow;
         private bool open;
-        private Graphics canvas;
-        private ContextMenuStrip menu;
+        //private Graphics canvas;
+        //private ContextMenuStrip menu;
 
         //konstruktor
-        public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu)
+ 
+        public Ventil(double admittans, string name, int x, int y, VVS input, VVS output, bool open, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
         {
             this.admittans = admittans;
-            this.name = name;
             this.old_str_pos = "";
             this.old_str_flow = "";
-            this.x = x;
-            this.y = y;
             this.input = input;
             this.output = output;
             this.flow = 0;
             this.open = open;
-            this.canvas = canvas;
-            this.menu = menu;
 
             //om ventilen är öppen
             if (open)
@@ -57,7 +55,7 @@ namespace KylSim
 
         //funktioner
         //ritar ut ventilen och dess kopplingar
-        public void drawVentil() 
+        public override void drawCompenent() 
         {
             Pen pen = new Pen(Color.Red);
             //ventilens punkter som ska ritas ut
@@ -88,7 +86,7 @@ namespace KylSim
         }
 
         //öppnar ventilen
-        public void openVentil()
+        public override void openVentil()
         {
             this.open = true;
             while(ventPos < 0.9)
@@ -101,7 +99,7 @@ namespace KylSim
         }
 
         //stänger ventilen
-        public void closeVentil()
+        public override void closeVentil()
         {
             this.open = false;
             while(ventPos > 0.1) 
@@ -113,7 +111,7 @@ namespace KylSim
         }
 
         //skriver ut ventilens vpos och flöde
-        public void display()
+        public override void display()
         {
             Brush brush = new SolidBrush(Color.Gainsboro);
             Font font = new Font("Courier", 8);
@@ -136,7 +134,7 @@ namespace KylSim
         }
 
         //beräknar dynamik för ventilen
-        public void dynamik()
+        public override void dynamik()
         {
             //anger det gamla flow-värdet till strängen old_flow
             this.old_str_flow = this.flow.ToString("0.0");
@@ -166,7 +164,7 @@ namespace KylSim
         }
 
         //kollar vilken ventil som ska visa menyn
-        public Ventil menuClick(int x, int y, Control fonster)
+        public override VVS menuClick(int x, int y, Control fonster)
         {
             //kollar om x-koordinaten stämmer överens med ventilen
             if (x >= (this.x - 18) && x <= (this.x + 18))

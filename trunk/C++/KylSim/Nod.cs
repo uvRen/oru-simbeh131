@@ -11,53 +11,49 @@ using System.Windows.Forms;
 
 namespace KylSim
 {
-    public class Nod
+    public class Nod : VVS
     {
         //variabler
         private double pressure;
         private bool adjustable;
-        private string name;
+        //private string name;
         private string old_str;
-        private Graphics canvas;
+        //private Graphics canvas;
         private double sumFlow = 0.0;
-        private int x;
-        private int y;
+        //private int x;
+        //private int y;
         private double inFlow = 0.0;
         private double outFlow = 0.0;
 
         //konstruktor med parametrar
-        public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y)
+        public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y) : base(name, canvas, x, y)
         {
             this.pressure = pressure;
             this.adjustable = adjustable;
-            this.name = name;
             this.old_str = "";
-            this.canvas = canvas;
-            this.x = x;
-            this.y = y;
         }
 
         //funktioner
         //returnerar trycket
-        public double getPressure()
+        public override double getPressure()
         {
             return this.pressure;
         }
 
-        //returner x-koordinaten
-        public int getX()
-        {
-            return x;
-        }
+        ////returner x-koordinaten
+        //public int getX()
+        //{
+        //    return x;
+        //}
 
-        //returnerar y-koordinaten
-        public int getY()
-        {
-            return y;
-        }
+        ////returnerar y-koordinaten
+        //public int getY()
+        //{
+        //    return y;
+        //}
 
         //ritar ut nodemn samt nodens namn
-        public void drawNod()
+        public override void drawCompenent()
         {
             Pen circle = new Pen(Color.Red);
             Brush brush = new SolidBrush(Color.Black);
@@ -69,7 +65,7 @@ namespace KylSim
         }
 
         //skriver ut trycket i noden
-        public void display()
+        public override void display()
         {
             Brush brush = new SolidBrush(Color.Gainsboro);
             Font font = new Font("Courier", 8);
@@ -84,7 +80,7 @@ namespace KylSim
         }
 
         //ändrar inflödet till noden
-        public void add_summaflode(double flow)
+        public override void add_summaflode(double flow)
         {
             //utflöde
             if (flow < 0)
@@ -100,7 +96,7 @@ namespace KylSim
         }
 
         //reglerar trycket
-        public void dynamik()
+        public override void dynamik()
         {
             this.old_str = pressure.ToString("0.0");
             if (adjustable)
