@@ -50,19 +50,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            this.contextMenuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.contextMenuStrip1_MouseDown);
             // 
             // öppnaToolStripMenuItem
             // 
             this.öppnaToolStripMenuItem.Name = "öppnaToolStripMenuItem";
             this.öppnaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.öppnaToolStripMenuItem.Text = "Öppna";
+            this.öppnaToolStripMenuItem.Click += new System.EventHandler(this.öppnaToolStripMenuItem_Click);
             // 
             // stängToolStripMenuItem
             // 
             this.stängToolStripMenuItem.Name = "stängToolStripMenuItem";
             this.stängToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.stängToolStripMenuItem.Text = "Stäng";
+            this.stängToolStripMenuItem.Click += new System.EventHandler(this.stängToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -74,6 +75,7 @@
             this.Name = "Form1";
             this.Text = "Kylsystem av Simon Berntsson";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

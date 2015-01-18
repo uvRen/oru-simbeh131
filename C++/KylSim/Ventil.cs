@@ -165,9 +165,20 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
+        //kollar vilken ventil som ska visa menyn
         public Ventil menuClick(int x, int y, Control fonster)
         {
-            return this;
+            //kollar om x-koordinaten stämmer överens med ventilen
+            if (x >= (this.x - 18) && x <= (this.x + 18))
+            {
+                if (y >= (this.y - 12) && y <= (this.y + 12))
+                {
+                    Point p = new Point(x, y);
+                    menu.Show(fonster, p);
+                    return this;
+                }
+            }
+            return null;
         }
     }
 }
