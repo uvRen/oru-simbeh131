@@ -43,6 +43,7 @@ namespace KylSim
                 com[count].drawCompenent();
                 count++;
             }
+            com[5].openComponent();
         }
 
         //exekveras en gång i sekunden
@@ -78,13 +79,13 @@ namespace KylSim
         //när användaren trycker på öppna i menyn
         private void öppnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            klickad_ventil.openVentil();
+            klickad_ventil.openComponent();
         }
 
         //när användaren trycker på stäng i menyn
         private void stängToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            klickad_ventil.closeVentil();
+            klickad_ventil.closeComponent();
         }
     }
 }

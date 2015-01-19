@@ -78,13 +78,13 @@ namespace KylSim
         }
 
         //öppnar ventilen
-        public override void openVentil()
+        public override void openComponent()
         {
             this.open = true;
         }
 
         //stänger ventilen
-        public override void closeVentil()
+        public override void closeComponent()
         {
             this.open = false;
         }
