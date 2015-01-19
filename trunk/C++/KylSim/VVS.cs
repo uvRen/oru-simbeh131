@@ -49,8 +49,8 @@ namespace KylSim
         public virtual void drawCompenent() {}
         public virtual void display() {}
         public virtual void dynamik() {}
-        public virtual void openVentil() { }
-        public virtual void closeVentil() { }
+        public virtual void openComponent() { }
+        public virtual void closeComponent() { }
         public virtual double getPressure() {
             return 0.0;
         }

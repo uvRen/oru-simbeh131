@@ -15,6 +15,7 @@ namespace KylSim
         //variabler
         private double flow;
         private double varv;
+        private bool open;
         private string old_str_pos = "speed: 0.0";
         private string old_str_flow;
         private Nod input;
@@ -31,6 +32,7 @@ namespace KylSim
             b = 10.0;
             varv = 0.0;
             flow = 0.0;
+            open = false;
         }
 
         //funktioner
@@ -91,6 +93,18 @@ namespace KylSim
         //skriver ut flöde och vartal
         public override void display()
         {
+            //stänger eller öppnar pumpen successivt
+            if (this.varv > 0.1 && this.open == false)
+            {
+                this.old_str_pos = varv.ToString("0.0");
+                varv -= 0.1;
+            }
+            else if (this.varv < 0.9 && this.open == true)
+            {
+                this.old_str_pos = varv.ToString("0.00");
+                varv += 0.1;
+            }
+
             Brush brush = new SolidBrush(Color.Gainsboro);
             Font font = new Font("Courier", 8);
 
@@ -108,6 +122,18 @@ namespace KylSim
             value = flow.ToString("0.0");
             info = "flöde: " + value;
             canvas.DrawString(info, font, brush, (float)x + 3, (float)y + 55);
+        }
+
+        //öppnar pumpen
+        public override void openComponent()
+        {
+            this.open = true;
+        }
+
+        //stänger pumpen
+        public override void closeComponent()
+        {
+            this.open = false;
         }
     }
 }
