@@ -18,14 +18,14 @@ namespace KylSim
         protected int x;
         protected int y;
 
-        //public VVS()
-        //{
-        //    this.name = "";
-        //    this.canvas = null;
-        //    this.menu = null;
-        //    this.x = -1;
-        //    this.y = -1;
-        //}
+        public VVS()
+        {
+            this.name = "";
+            this.canvas = null;
+            this.menu = null;
+            this.x = -1;
+            this.y = -1;
+        }
 
         public VVS(string name, Graphics canvas, int x, int y, ContextMenuStrip menu = null) 
         {
@@ -46,39 +46,15 @@ namespace KylSim
             return this.y;
         }
 
-        public virtual void drawCompenent() {
-
-        }
-
-        public virtual void display()
-        {
-
-        }
-
-        public virtual void dynamik()
-        {
-
-        }
-
-        public virtual void openVentil()
-        {
-
-        }
-
-        public virtual void closeVentil()
-        {
-
-        }
-
+        public virtual void drawCompenent() {}
+        public virtual void display() {}
+        public virtual void dynamik() {}
+        public virtual void openVentil() { }
+        public virtual void closeVentil() { }
         public virtual double getPressure() {
-            return 0;
+            return 0.0;
         }
-
-        public virtual void add_summaflode(double flow)
-        {
-
-        }
-
+        public virtual void add_summaflode(double flow) { }
         public virtual VVS menuClick(int x, int y, Control fonster)
         {
             return this;

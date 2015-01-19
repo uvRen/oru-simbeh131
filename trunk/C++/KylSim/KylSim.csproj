@@ -53,6 +53,7 @@
     <Compile Include="Nod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pump.cs" />
     <Compile Include="Ventil.cs" />
     <Compile Include="VVS.cs" />
     <EmbeddedResource Include="Form1.resx">
