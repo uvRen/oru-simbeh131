@@ -13,49 +13,36 @@ namespace KylSim
     public partial class Form1 : Form {
         Graphics _canvas;
 
-        Nod n1, n2, n3;
+        //Nod n1, n2, n3;
         VVS klickad_ventil;
-        VVS[] komponenter = new VVS[20];
+        //VVS[] komponenter;
+        List<VVS> com;
         int count = 0;
-        int antal = 6;
+        int antal = 5;
 
         //konstruktor för fönstret
         public Form1() {
             this._canvas = CreateGraphics();
             InitializeComponent();
-            //n1 = new Nod(5.0, false, "N1", _canvas, 10, 195);
-            //n2 = new Nod(1.0, true, "N2", _canvas, 120, 195);
-            //n3 = new Nod(1.0, false, "N3",  _canvas, 240, 195);
-            //v1 = new Ventil(10.0, "Ventil1", 80, 200, n1, n2, true, _canvas, this.contextMenuStrip1);
-            
-            komponenter[0] = new Nod(5.0, false, "N1", _canvas, 10, 195);
-            komponenter[1] = new Nod(1.0, true, "N2", _canvas, 120, 195);
-            komponenter[2] = new Nod(1.0, false, "N3",  _canvas, 240, 195);
-            komponenter[3] = new Ventil(10.0, "Ventil1", 80, 200, komponenter[0], komponenter[1], true, _canvas, this.contextMenuStrip1);
-            komponenter[4] = new Ventil(10.0, "Ventil2", 200, 200, komponenter[1], komponenter[2], true, _canvas, this.contextMenuStrip1);
-            komponenter[5] = new Ventil(10.0, "Ventil3", 200, 100, komponenter[1], komponenter[2], true, _canvas, this.contextMenuStrip1);
+
+            com = new List<VVS>();
+            com.Add(new Nod(5.0, false, "N1", _canvas, 10, 195));
+            com.Add(new Nod(1.0, true, "N2", _canvas, 120, 195));
+            com.Add(new Nod(3.0, false, "N3", _canvas, 240, 195));
+            com.Add(new Ventil(10.0, "Ventil1", 80, 200, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
+            com.Add(new Ventil(10.0, "Ventil2", 200, 200, (Nod)com[1], (Nod)com[2], true, _canvas, this.contextMenuStrip1));
+            com.Add(new Pump("Pump1", 60, 60, (Nod)com[0], (Nod)com[1], _canvas, this.contextMenuStrip1));
         }
 
         //när programmet startar
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             count = 0;
-            //while (komponenter[count] != null)
-            while (count < antal)
+            for (int i = 0; i < com.Count; i++)
             {
-                komponenter[count].drawCompenent();
+                com[count].drawCompenent();
                 count++;
             }
-            //n1.drawCompenent();
-            //n2.drawCompenent();
-            //n3.drawCompenent();
-            //n1.display();
-            //n2.display();
-            //n3.display();
-            ////v1.drawVentil();
-            //komponenter[0].drawCompenent();
-            //komponenter[1].drawCompenent();
-            //komponenter[2].drawCompenent();
         }
 
         //exekveras en gång i sekunden
@@ -63,24 +50,11 @@ namespace KylSim
         {
             count = 0;
             //while (komponenter[count] != null)
-            while (count < antal)
+            for (int i = 0; i < com.Count; i++ )
             {
-                komponenter[count].display();
-                komponenter[count].dynamik();
-                count++;
+                com[i].display();
+                com[i].dynamik();
             }
-            //n1.display();
-            //n1.dynamik();
-            //komponenter[0].display();
-            //komponenter[0].dynamik();
-            //n2.display();
-            //n2.dynamik();
-            //komponenter[1].display();
-            //komponenter[1].dynamik();
-            //n3.display();
-            //n3.dynamik();
-            //komponenter[2].display();
-            //komponenter[2].dynamik();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -91,13 +65,12 @@ namespace KylSim
         //när användaren klickar i fönstret
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            count = 0;
+            count = 3;
             klickad_ventil = null;
             //kollar om ett klick skedde på en ventil
-            //while (klickad_ventil == null && komponenter[count] != null)
             while (count < antal && klickad_ventil == null)
             {
-                klickad_ventil = komponenter[count].menuClick(e.X, e.Y, this);
+                klickad_ventil = com[count].menuClick(e.X, e.Y, this);
                 count++;
             }
         }

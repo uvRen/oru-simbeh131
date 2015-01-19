@@ -14,24 +14,16 @@ namespace KylSim
     {
         //variabler
         private double admittans;
-        //private string name;
         private string old_str_pos;
         private string old_str_flow;
         private double ventPos;
-        //private int x;
-        //private int y;
-        //private Nod input;
-        //private Nod output;
-        private VVS input;
-        private VVS output;
+        private Nod input;
+        private Nod output;
         private double flow;
         private bool open;
-        //private Graphics canvas;
-        //private ContextMenuStrip menu;
 
         //konstruktor
- 
-        public Ventil(double admittans, string name, int x, int y, VVS input, VVS output, bool open, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
+        public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
         {
             this.admittans = admittans;
             this.old_str_pos = "";
@@ -89,30 +81,28 @@ namespace KylSim
         public override void openVentil()
         {
             this.open = true;
-            while(ventPos < 0.9)
-            {
-                this.old_str_pos = ventPos.ToString("0.00");
-                ventPos += 0.1;
-                //System.Threading.Thread.Sleep(200);
-            } 
-                
         }
 
         //stänger ventilen
         public override void closeVentil()
         {
             this.open = false;
-            while(ventPos > 0.1) 
-            {
-                this.old_str_pos = ventPos.ToString("0.0");
-                ventPos -= 0.1;
-                //System.Threading.Thread.Sleep(200);
-            } 
         }
 
         //skriver ut ventilens vpos och flöde
         public override void display()
         {
+            //stänger eller öppnar ventilen successivt
+            if (this.ventPos > 0.1 && this.open == false)
+            {
+                this.old_str_pos = ventPos.ToString("0.0");
+                ventPos -= 0.1;
+            }
+            else if (this.ventPos < 1.0 && this.open == true)
+            {
+                this.old_str_pos = ventPos.ToString("0.00");
+                ventPos += 0.1;
+            }
             Brush brush = new SolidBrush(Color.Gainsboro);
             Font font = new Font("Courier", 8);
 
@@ -169,6 +159,7 @@ namespace KylSim
             //kollar om x-koordinaten stämmer överens med ventilen
             if (x >= (this.x - 18) && x <= (this.x + 18))
             {
+                //kollar om y-koordinaten stämmer överens med ventilen
                 if (y >= (this.y - 12) && y <= (this.y + 12))
                 {
                     Point p = new Point(x, y);
