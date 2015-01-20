@@ -75,7 +75,7 @@
             this.startaToolStripMenuItem,
             this.stoppaToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(112, 48);
             // 
             // startaToolStripMenuItem
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(664, 442);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Kylsystem av Simon Berntsson";

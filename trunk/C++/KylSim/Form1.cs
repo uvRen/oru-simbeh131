@@ -18,22 +18,24 @@ namespace KylSim
         //VVS[] komponenter;
         List<VVS> com;
         int count = 0;
-        int antal = 7;
+        int antal = 0;
 
         //konstruktor för fönstret
         public Form1() {
-            this._canvas = this.CreateGraphics();
             InitializeComponent();
+            this._canvas = this.CreateGraphics();
 
             com = new List<VVS>();
-            com.Add(new Nod(5.0, false, "N1", _canvas, 2, 195));
-            com.Add(new Nod(1.0, true, "N2", _canvas, 100, 195));
-            com.Add(new Nod(2.0, true, "N3", _canvas, 150, 195));
-            com.Add(new Nod(1.0, false, "N4", _canvas, 400, 195));
-            com.Add(new Pump("Pump1", 120, 180, (Nod)com[1], (Nod)com[2], _canvas, this.contextMenuStrip2));
-            com.Add(new Ventil(10.0, "Ventil1", 70, 200, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
-            com.Add(new Ventil(10.0, "Ventil2", 200, 200, (Nod)com[2], (Nod)com[3], true, _canvas, this.contextMenuStrip1));
-            
+            com.Add(new Nod(5.0, false, "N1", _canvas, 30, 445));
+            com.Add(new Nod(1.0, true, "N2", _canvas, 340, 445));
+            com.Add(new Nod(2.0, false, "N3", _canvas, 600, 445));
+            com.Add(new Nod(1.0, false, "N4", _canvas, 600, 245));
+            com.Add(new Nod(2.0, true, "N5", _canvas, 395, 150));
+            com.Add(new Nod(1.0, false, "N6", _canvas, 200, 150));
+            com.Add(new Pump("Pump1", 450, 430, (Nod)com[1], (Nod)com[2], _canvas, this.contextMenuStrip2));
+            com.Add(new Ventil(10.0, "Ventil1", 200, 450, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
+            com.Add(new Ventil(10.0, "Ventil2", 400, 250, (Nod)com[3], (Nod)com[5], true, _canvas, this.contextMenuStrip1));
+            antal = com.Count;
         }
 
         //när programmet startar
