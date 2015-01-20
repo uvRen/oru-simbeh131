@@ -18,20 +18,22 @@ namespace KylSim
         //VVS[] komponenter;
         List<VVS> com;
         int count = 0;
-        int antal = 5;
+        int antal = 7;
 
         //konstruktor för fönstret
         public Form1() {
-            this._canvas = CreateGraphics();
+            this._canvas = this.CreateGraphics();
             InitializeComponent();
 
             com = new List<VVS>();
-            com.Add(new Nod(5.0, false, "N1", _canvas, 10, 195));
-            com.Add(new Nod(1.0, true, "N2", _canvas, 120, 195));
-            com.Add(new Nod(3.0, false, "N3", _canvas, 240, 195));
-            com.Add(new Ventil(10.0, "Ventil1", 80, 200, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
-            com.Add(new Ventil(10.0, "Ventil2", 200, 200, (Nod)com[1], (Nod)com[2], true, _canvas, this.contextMenuStrip1));
-            com.Add(new Pump("Pump1", 60, 60, (Nod)com[0], (Nod)com[1], _canvas, this.contextMenuStrip1));
+            com.Add(new Nod(5.0, false, "N1", _canvas, 2, 195));
+            com.Add(new Nod(1.0, true, "N2", _canvas, 100, 195));
+            com.Add(new Nod(2.0, true, "N3", _canvas, 150, 195));
+            com.Add(new Nod(1.0, false, "N4", _canvas, 400, 195));
+            com.Add(new Pump("Pump1", 120, 180, (Nod)com[1], (Nod)com[2], _canvas, this.contextMenuStrip2));
+            com.Add(new Ventil(10.0, "Ventil1", 70, 200, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
+            com.Add(new Ventil(10.0, "Ventil2", 200, 200, (Nod)com[2], (Nod)com[3], true, _canvas, this.contextMenuStrip1));
+            
         }
 
         //när programmet startar
@@ -43,7 +45,7 @@ namespace KylSim
                 com[count].drawCompenent();
                 count++;
             }
-            com[5].openComponent();
+            com[4].openComponent();
         }
 
         //exekveras en gång i sekunden
@@ -66,7 +68,7 @@ namespace KylSim
         //när användaren klickar i fönstret
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            count = 3;
+            count = 4;
             klickad_ventil = null;
             //kollar om ett klick skedde på en ventil
             while (count < antal && klickad_ventil == null)
@@ -84,6 +86,16 @@ namespace KylSim
 
         //när användaren trycker på stäng i menyn
         private void stängToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            klickad_ventil.closeComponent();
+        }
+
+        private void startaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            klickad_ventil.openComponent();
+        }
+
+        private void stoppaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             klickad_ventil.closeComponent();
         }

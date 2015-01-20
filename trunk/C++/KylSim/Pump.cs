@@ -135,5 +135,22 @@ namespace KylSim
         {
             this.open = false;
         }
+
+        //kollar vilken pump som ska visa menyn
+        public override VVS menuClick(int x, int y, Control fonster)
+        {
+            //kollar om x-koordinaten stämmer överens med pumpen
+            if (x >= this.x && x <= (this.x + 40))
+            {
+                //kollar om y-koordinaten stämmer överens med pumpen
+                if (y >= (this.y - 20) && y <= (this.y + 20))
+                {
+                    Point p = new Point(x, y);
+                    menu.Show(fonster, p);
+                    return this;
+                }
+            }
+            return null;
+        }
     }
 }
