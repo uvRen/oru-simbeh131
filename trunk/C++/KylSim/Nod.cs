@@ -61,7 +61,7 @@ namespace KylSim
             //ritar ut cirkeln
             canvas.DrawEllipse(circle, (float)x, (float)y, 10, 10);
             //skriver ut namnet på noden
-            canvas.DrawString(name, font, brush, (float)x, (float)y-15);
+            canvas.DrawString(name, font, brush, (float)x+10, (float)y-15);
         }
 
         //skriver ut trycket i noden

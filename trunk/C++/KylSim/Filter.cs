@@ -28,7 +28,7 @@ namespace KylSim
             this.admittans = admittans;
             this.input = input;
             this.output = output;
-            ventPos = 0.4;
+            ventPos = 1.0;
         }
 
         //beräknar dynamik för ventilen

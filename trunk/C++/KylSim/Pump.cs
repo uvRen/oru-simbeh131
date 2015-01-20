@@ -62,6 +62,11 @@ namespace KylSim
             }
 
             this.flow = calc;
+
+            //skickar flödet till in-noden
+            input.add_summaflode(-flow);
+            //skickar flödet till ut-noden
+            output.add_summaflode(flow);
         }
 
         //ritar ut pumpen

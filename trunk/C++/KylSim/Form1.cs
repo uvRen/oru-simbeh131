@@ -27,14 +27,15 @@ namespace KylSim
 
             com = new List<VVS>();
             com.Add(new Nod(2.0, false, "N1", _canvas, 30, 445));
-            com.Add(new Nod(1.0, true, "N2", _canvas, 340, 445));
-            com.Add(new Nod(2.0, true, "N3", _canvas, 600, 445));
-            com.Add(new Nod(1.0, true, "N4", _canvas, 600, 245));
-            com.Add(new Nod(2.0, true, "N5", _canvas, 395, 145));
-            com.Add(new Nod(1.0, true, "N6", _canvas, 200, 145));
-            com.Add(new Nod(2.0, false, "N7", _canvas, 30, 150));
+            com.Add(new Nod(0.0, true, "N2", _canvas, 340, 445));
+            com.Add(new Nod(0.0, true, "N3", _canvas, 600, 445));
+            com.Add(new Nod(0.0, true, "N4", _canvas, 600, 245));
+            com.Add(new Nod(0.0, true, "N5", _canvas, 395, 145));
+            com.Add(new Nod(0.0, true, "N6", _canvas, 200, 145));
+            com.Add(new Nod(2.0, false, "N7", _canvas, 30, 145));
             com.Add(new Nod(1.0, false, "N8", _canvas, 650, 60));
             com.Add(new Filter(10, "Filter1", 300, 140, (Nod)com[4], (Nod)com[5], _canvas));
+            com.Add(new Vvxl(10, "VVXL", 595, 325, (Nod)com[2], (Nod)com[3], _canvas));
             com.Add(new Pump("Pump1", 450, 430, (Nod)com[1], (Nod)com[2], _canvas, this.contextMenuStrip2));
             com.Add(new Ventil(10.0, "Ventil1", 200, 450, (Nod)com[0], (Nod)com[1], true, _canvas, this.contextMenuStrip1));
             com.Add(new Ventil(10.0, "Ventil2", 500, 150, (Nod)com[3], (Nod)com[4], true, _canvas, this.contextMenuStrip1));
@@ -76,7 +77,7 @@ namespace KylSim
         //när användaren klickar i fönstret
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            count = 9;
+            count = 10;
             klickad_ventil = null;
             //kollar om ett klick skedde på en ventil
             while (count < antal && klickad_ventil == null)
