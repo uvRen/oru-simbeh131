@@ -71,12 +71,12 @@ namespace KylSim
             Font font = new Font("Courier", 8);
             //skriver över det gamla värdet
             string value = "Tryck: " + old_str;
-            canvas.DrawString(value, font, brush, (float)x, (float)y + 15);
+            canvas.DrawString(value, font, brush, (float)x + 10, (float)y + 15);
 
             //skriver ut det nya värdet
             brush = new SolidBrush(Color.Black);
-            value = "Tryck: " + pressure;
-            canvas.DrawString(value, font, brush, (float)x, (float)y + 15);
+            value = "Tryck: " + pressure.ToString("0.0");
+            canvas.DrawString(value, font, brush, (float)x + 10, (float)y + 15);
         }
 
         //ändrar inflödet till noden

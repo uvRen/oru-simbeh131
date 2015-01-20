@@ -26,7 +26,6 @@ namespace KylSim
         public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
         {
             this.admittans = admittans;
-            this.old_str_pos = "";
             this.old_str_flow = "";
             this.input = input;
             this.output = output;
@@ -43,6 +42,8 @@ namespace KylSim
             {
                 this.ventPos = 0.0;
             }
+
+            this.old_str_pos = ventPos.ToString("0.0");
         }
 
         //funktioner
@@ -65,13 +66,39 @@ namespace KylSim
 
             //input-nodens position
             Point p2 = new Point(input.getX(), input.getY() + 5);
-            canvas.DrawLine(pen2, p1, p2);
 
-            //output-nodens position
-            p2 = new Point(output.getX(), output.getY() + 5);
-            canvas.DrawLine(pen2, p1, p2);
+            ////output-nodens position
+            Point p3 = new Point(output.getX(), output.getY() + 5);
 
-            //skriver ut namnet
+            Point temp;
+            Point nod;
+
+            //rita till output-noden
+            if (p3.Y != p1.Y)
+            {
+                temp = new Point(p3.X + 5, p1.Y);
+                nod = new Point(p3.X + 5, p3.Y);
+                canvas.DrawLine(pen2, p1, temp);
+                canvas.DrawLine(pen2, temp, nod);
+            }
+            else
+            {
+                canvas.DrawLine(pen2, p1, p3);
+            }
+            //rita till output-noden
+            if (p2.Y != p1.Y)
+            {
+                temp = new Point(p2.X + 5, p1.Y);
+                nod = new Point(p2.X + 5, p2.Y);
+                canvas.DrawLine(pen2, p1, temp);
+                canvas.DrawLine(pen2, temp, nod);
+            }
+            else
+            {
+                canvas.DrawLine(pen2, p1, p2);
+            }
+
+            ////skriver ut namnet
             Brush brush = new SolidBrush(Color.Black);
             Font font = new Font("Courier", 8);
             canvas.DrawString(name, font, brush, (float)x - 20, (float)y - 30);
@@ -95,12 +122,12 @@ namespace KylSim
             //stänger eller öppnar ventilen successivt
             if (this.ventPos > 0.1 && this.open == false)
             {
-                this.old_str_pos = ventPos.ToString("0.0");
+                this.old_str_pos = "vpos: " + ventPos.ToString("0.0");
                 ventPos -= 0.1;
             }
             else if (this.ventPos < 1.0 && this.open == true)
             {
-                this.old_str_pos = ventPos.ToString("0.00");
+                this.old_str_pos = "vpos: " + ventPos.ToString("0.0");
                 ventPos += 0.1;
             }
             Brush brush = new SolidBrush(Color.Gainsboro);
@@ -108,7 +135,7 @@ namespace KylSim
 
             //omvandlar ventPos till en string med en decimal
             string value = ventPos.ToString("0.0");
-            string info = "vpos: " + value;
+            string info = "vpos: " + ventPos;
 
             //skriver över det gamla värdet
             canvas.DrawString("vpos: " + old_str_pos, font, brush, (float)x - 25, (float)y + 15);
