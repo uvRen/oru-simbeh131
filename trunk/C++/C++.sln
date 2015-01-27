@@ -59,6 +59,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST-circular_list", "TEST-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KylSim", "KylSim\KylSim.csproj", "{04C9232A-9514-45AE-A9DD-31B7430D9EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lek", "Lek\Lek.csproj", "{6743403D-652C-458D-8986-9698D4FA9A6E}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -353,6 +355,16 @@ Global
 		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{04C9232A-9514-45AE-A9DD-31B7430D9EFD}.Release|Win32.ActiveCfg = Release|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6743403D-652C-458D-8986-9698D4FA9A6E}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
