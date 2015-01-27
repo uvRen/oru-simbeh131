@@ -48,18 +48,23 @@ namespace KylSim
             }
 
             double calc = 0;
-            double inPressure, outPressure;
-            inPressure = input.getPressure();
-            outPressure = output.getPressure();
+            //om pumpen är öppen
+            if (this.open == true)
+            {
+                double inPressure, outPressure;
+                inPressure = input.getPressure();
+                outPressure = output.getPressure();
 
-            if (inPressure >= outPressure)
-            {
-                calc = k * varv * a * (b + (Math.Sqrt(inPressure - outPressure)));
+                if (inPressure >= outPressure)
+                {
+                    calc = k * varv * a * (b + (Math.Sqrt(inPressure - outPressure)));
+                }
+                else
+                {
+                    calc = k * varv * a * (b - (Math.Sqrt(outPressure - inPressure)));
+                }
             }
-            else
-            {
-                calc = k * varv * a * (b - (Math.Sqrt(outPressure - inPressure)));
-            }
+            
 
             this.flow = calc;
 

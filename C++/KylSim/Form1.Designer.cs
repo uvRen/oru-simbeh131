@@ -43,7 +43,7 @@
             // Update_Dynamik_Summaflode
             // 
             this.Update_Dynamik_Summaflode.Enabled = true;
-            this.Update_Dynamik_Summaflode.Interval = 500;
+            this.Update_Dynamik_Summaflode.Interval = 250;
             this.Update_Dynamik_Summaflode.Tick += new System.EventHandler(this.Update_Dynamik_Summaflode_Tick);
             // 
             // contextMenuStrip1

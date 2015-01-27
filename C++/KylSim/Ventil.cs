@@ -161,18 +161,26 @@ namespace KylSim
             outNodPressure = this.output.getPressure();
 
             double calc = 0;
-
-            if (inNodPressure >= outNodPressure)
+            //om ventilen är öppen
+            if (this.open == true)
             {
-                calc = this.admittans * ventPos * (Math.Sqrt(inNodPressure - outNodPressure));
-                this.flow = calc;
-            }
+                if (inNodPressure >= outNodPressure)
+                {
+                    calc = this.admittans * this.ventPos * (Math.Sqrt(inNodPressure - outNodPressure));
+                    this.flow = calc;
+                }
 
+                else
+                {
+                    calc = (-1 * this.admittans) * this.ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
+                    this.flow = calc;
+                }
+            }
             else
             {
-                calc = -1 * this.admittans * ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
-                this.flow = calc;
+                this.flow = 0;
             }
+            
 
             //skickar flödet till in-noden
             input.add_summaflode(-flow);
