@@ -27,7 +27,7 @@ namespace KylSim
             this.y = -1;
         }
 
-        public VVS(string name, Graphics canvas, int x, int y, ContextMenuStrip menu = null) 
+        public VVS(string name, Graphics canvas, int x, int y, ContextMenuStrip menu = null)
         {
             this.name = name;
             this.canvas = canvas;
@@ -46,12 +46,13 @@ namespace KylSim
             return this.y;
         }
 
-        public virtual void drawCompenent() {}
-        public virtual void display() {}
-        public virtual void dynamik() {}
+        public virtual void drawCompenent() { }
+        public virtual void display() { }
+        public virtual void dynamik() { }
         public virtual void openComponent() { }
         public virtual void closeComponent() { }
-        public virtual double getPressure() {
+        public virtual double getPressure()
+        {
             return 0.0;
         }
         public virtual void add_summaflode(double flow) { }

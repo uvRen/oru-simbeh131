@@ -23,7 +23,8 @@ namespace KylSim
         private int countRensa = 0;
 
         //konstruktor
-        public Filter(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas) : base(name, canvas, x, y)
+        public Filter(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas)
+            : base(name, canvas, x, y)
         {
             this.admittans = admittans;
             this.input = input;
@@ -118,14 +119,14 @@ namespace KylSim
             //ritar ut linjerna i filtret
             canvas.DrawLine(pen, (float)x + 5, (float)y, (float)x + 5, (float)y + 15);
             canvas.DrawLine(pen, (float)x + 25, (float)y, (float)x + 25, (float)y + 15);
-            canvas.DrawLine(pen, (float)x+15, (float)y+5, (float)x+15, (float)y+20);
+            canvas.DrawLine(pen, (float)x + 15, (float)y + 5, (float)x + 15, (float)y + 20);
 
             //ritar upp kopplingarna till noderna
             pen = new Pen(Color.Blue);
 
             Point p1 = new Point(this.x, this.y + 10);
-            Point p2 = new Point(output.getX(), output.getY()+5);
-            Point p3 = new Point(input.getX(), input.getY()+5);
+            Point p2 = new Point(output.getX(), output.getY() + 5);
+            Point p3 = new Point(input.getX(), input.getY() + 5);
 
             canvas.DrawLine(pen, p1, p2);
             canvas.DrawLine(pen, p1, p3);

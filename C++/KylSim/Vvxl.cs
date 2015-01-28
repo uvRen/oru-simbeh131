@@ -21,7 +21,8 @@ namespace KylSim
         private double flow;
 
         //kosntruktor
-        public Vvxl(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas) : base(name, canvas, x, y)
+        public Vvxl(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas)
+            : base(name, canvas, x, y)
         {
             this.admittans = admittans;
             this.old_str_flow = "";
@@ -39,9 +40,9 @@ namespace KylSim
             //ritar upp kopplingarna till noderna
             pen = new Pen(Color.Blue);
 
-            Point p1 = new Point(this.x+10, this.y);
-            Point p2 = new Point(output.getX()+5, output.getY());
-            Point p3 = new Point(input.getX()+5, input.getY());
+            Point p1 = new Point(this.x + 10, this.y);
+            Point p2 = new Point(output.getX() + 5, output.getY());
+            Point p3 = new Point(input.getX() + 5, input.getY());
 
             canvas.DrawLine(pen, p1, p2);
             canvas.DrawLine(pen, p1, p3);
@@ -49,7 +50,7 @@ namespace KylSim
             //skriver ut namnet
             Brush brush = new SolidBrush(Color.Black);
             Font font = new Font("Courier", 8);
-            canvas.DrawString(name, font, brush, (float)x+30, (float)y +10);
+            canvas.DrawString(name, font, brush, (float)x + 30, (float)y + 10);
 
         }
 
@@ -93,12 +94,12 @@ namespace KylSim
             string info = "";
 
             //skriver över det gamla värdet
-            canvas.DrawString("flöde: " + old_str_flow, font, brush, (float)x +30, (float)y + 30);
+            canvas.DrawString("flöde: " + old_str_flow, font, brush, (float)x + 30, (float)y + 30);
 
             //skriver ut info om ventilen
             brush = new SolidBrush(Color.Black);
             info = "flöde: " + value;
-            canvas.DrawString(info, font, brush, (float)x +30, (float)y + 30);
+            canvas.DrawString(info, font, brush, (float)x + 30, (float)y + 30);
 
         }
     }

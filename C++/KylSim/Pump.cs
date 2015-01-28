@@ -20,11 +20,12 @@ namespace KylSim
         private string old_str_flow;
         private Nod input;
         private Nod output;
-        private double a; 
+        private double a;
         private double b;
-        
+
         //konstruktor
-        public Pump(string name, int x, int y, Nod input, Nod output, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
+        public Pump(string name, int x, int y, Nod input, Nod output, Graphics canvas, ContextMenuStrip menu)
+            : base(name, canvas, x, y, menu)
         {
             this.input = input;
             this.output = output;
@@ -48,23 +49,18 @@ namespace KylSim
             }
 
             double calc = 0;
-            //om pumpen är öppen
-            if (this.open == true)
-            {
-                double inPressure, outPressure;
-                inPressure = input.getPressure();
-                outPressure = output.getPressure();
+            double inPressure, outPressure;
+            inPressure = input.getPressure();
+            outPressure = output.getPressure();
 
-                if (inPressure >= outPressure)
-                {
-                    calc = k * varv * a * (b + (Math.Sqrt(inPressure - outPressure)));
-                }
-                else
-                {
-                    calc = k * varv * a * (b - (Math.Sqrt(outPressure - inPressure)));
-                }
+            if (inPressure >= outPressure)
+            {
+                calc = k * varv * a * (b + (Math.Sqrt(inPressure - outPressure)));
             }
-            
+            else
+            {
+                calc = k * varv * a * (b - (Math.Sqrt(outPressure - inPressure)));
+            }
 
             this.flow = calc;
 
@@ -89,7 +85,7 @@ namespace KylSim
             //ritar ut kopplingar till nästliggande noder
             Pen pen2 = new Pen(Color.Blue);
             //ventilensposition
-            Point p1 = new Point(this.x+20, this.y+20);
+            Point p1 = new Point(this.x + 20, this.y + 20);
 
             //input-nodens position
             Point p2 = new Point(input.getX(), input.getY() + 5);

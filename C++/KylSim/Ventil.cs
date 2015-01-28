@@ -23,7 +23,8 @@ namespace KylSim
         private bool open;
 
         //konstruktor
-        public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu) : base(name, canvas, x, y, menu)
+        public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu)
+            : base(name, canvas, x, y, menu)
         {
             this.admittans = admittans;
             this.old_str_flow = "";
@@ -48,11 +49,11 @@ namespace KylSim
 
         //funktioner
         //ritar ut ventilen och dess kopplingar
-        public override void drawCompenent() 
+        public override void drawCompenent()
         {
             Pen pen = new Pen(Color.Red);
             //ventilens punkter som ska ritas ut
-            Point[] point1 = { new Point(x, y), new Point(x - 18, y + 12), new Point(x - 18, y - 12)};
+            Point[] point1 = { new Point(x, y), new Point(x - 18, y + 12), new Point(x - 18, y - 12) };
             Point[] point2 = { new Point(x, y), new Point(x + 18, y + 12), new Point(x + 18, y - 12) };
 
             //ritar ut två trianglar
@@ -146,7 +147,7 @@ namespace KylSim
             canvas.DrawString(info, font, brush, (float)x - 25, (float)y + 15);
             value = flow.ToString("0.0");
             info = "flöde: " + value;
-            canvas.DrawString(info, font, brush, (float)x-25, (float)y + 30);
+            canvas.DrawString(info, font, brush, (float)x - 25, (float)y + 30);
 
         }
 
@@ -161,26 +162,18 @@ namespace KylSim
             outNodPressure = this.output.getPressure();
 
             double calc = 0;
-            //om ventilen är öppen
-            if (this.open == true)
-            {
-                if (inNodPressure >= outNodPressure)
-                {
-                    calc = this.admittans * this.ventPos * (Math.Sqrt(inNodPressure - outNodPressure));
-                    this.flow = calc;
-                }
 
-                else
-                {
-                    calc = (-1 * this.admittans) * this.ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
-                    this.flow = calc;
-                }
+            if (inNodPressure >= outNodPressure)
+            {
+                calc = this.admittans * ventPos * (Math.Sqrt(inNodPressure - outNodPressure));
+                this.flow = calc;
             }
+
             else
             {
-                this.flow = 0;
+                calc = -1 * this.admittans * ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
+                this.flow = calc;
             }
-            
 
             //skickar flödet till in-noden
             input.add_summaflode(-flow);
