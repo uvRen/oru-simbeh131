@@ -13,19 +13,22 @@ namespace KylSim
 {
     public class Nod : VVS
     {
-        //variabler
         private double pressure;
         private bool adjustable;
-        //private string name;
         private string old_str;
-        //private Graphics canvas;
         private double sumFlow = 0.0;
-        //private int x;
-        //private int y;
         private double inFlow = 0.0;
         private double outFlow = 0.0;
 
-        //konstruktor med parametrar
+        /// <summary>
+        /// Konstruktor med parametrar
+        /// </summary>
+        /// <param name="pressure"></param>
+        /// <param name="adjustable"></param>
+        /// <param name="name"></param>
+        /// <param name="canvas"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y)
             : base(name, canvas, x, y)
         {
@@ -34,26 +37,18 @@ namespace KylSim
             this.old_str = "";
         }
 
-        //funktioner
-        //returnerar trycket
+        /// <summary>
+        /// Ger trycket i noden
+        /// </summary>
+        /// <returns>Trycket</returns>
         public override double getPressure()
         {
             return this.pressure;
         }
 
-        ////returner x-koordinaten
-        //public int getX()
-        //{
-        //    return x;
-        //}
-
-        ////returnerar y-koordinaten
-        //public int getY()
-        //{
-        //    return y;
-        //}
-
-        //ritar ut nodemn samt nodens namn
+        /// <summary>
+        /// Ritar ut noden och nodens namn
+        /// </summary>
         public override void drawCompenent()
         {
             Pen circle = new Pen(Color.Red);
@@ -65,7 +60,9 @@ namespace KylSim
             canvas.DrawString(name, font, brush, (float)x + 10, (float)y - 15);
         }
 
-        //skriver ut trycket i noden
+        /// <summary>
+        /// Skriver ut trycket i noden
+        /// </summary>
         public override void display()
         {
             Brush brush = new SolidBrush(Color.Gainsboro);
@@ -80,7 +77,10 @@ namespace KylSim
             canvas.DrawString(value, font, brush, (float)x + 10, (float)y + 15);
         }
 
-        //ändrar inflödet till noden
+        /// <summary>
+        /// Ändrar flödet i noden
+        /// </summary>
+        /// <param name="flow"></param>
         public override void add_summaflode(double flow)
         {
             //utflöde
@@ -96,7 +96,9 @@ namespace KylSim
             this.sumFlow = this.inFlow + this.outFlow;
         }
 
-        //reglerar trycket
+        /// <summary>
+        /// Beräknar trycket i noden
+        /// </summary>
         public override void dynamik()
         {
             this.old_str = pressure.ToString("0.0");
