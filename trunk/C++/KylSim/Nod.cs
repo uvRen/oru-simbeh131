@@ -16,22 +16,22 @@ namespace KylSim
         //variabler
         private double pressure;
         private bool adjustable;
+        //private string name;
         private string old_str;
+        //private Graphics canvas;
         private double sumFlow = 0.0;
-        private double old_sumFlow = 0.0;
+        //private int x;
+        //private int y;
         private double inFlow = 0.0;
         private double outFlow = 0.0;
-        private double i;
-        private double m;
 
         //konstruktor med parametrar
-        public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y) : base(name, canvas, x, y)
+        public Nod(double pressure, bool adjustable, string name, Graphics canvas, int x, int y)
+            : base(name, canvas, x, y)
         {
             this.pressure = pressure;
             this.adjustable = adjustable;
             this.old_str = "";
-            i = 0.001;
-            m = 0.05;
         }
 
         //funktioner
@@ -40,6 +40,18 @@ namespace KylSim
         {
             return this.pressure;
         }
+
+        ////returner x-koordinaten
+        //public int getX()
+        //{
+        //    return x;
+        //}
+
+        ////returnerar y-koordinaten
+        //public int getY()
+        //{
+        //    return y;
+        //}
 
         //ritar ut nodemn samt nodens namn
         public override void drawCompenent()
@@ -50,7 +62,7 @@ namespace KylSim
             //ritar ut cirkeln
             canvas.DrawEllipse(circle, (float)x, (float)y, 10, 10);
             //skriver ut namnet på noden
-            canvas.DrawString(name, font, brush, (float)x+10, (float)y-15);
+            canvas.DrawString(name, font, brush, (float)x + 10, (float)y - 15);
         }
 
         //skriver ut trycket i noden
@@ -88,46 +100,14 @@ namespace KylSim
         public override void dynamik()
         {
             this.old_str = pressure.ToString("0.0");
-            // om reglerbar
             if (adjustable)
             {
-                if (Math.Abs(sumFlow) > 0.1)
-                {
-                    if ((sumFlow * old_sumFlow) < 0 && Math.Abs(sumFlow) > Math.Abs(old_sumFlow))
-                    {
-                        m *= 0.8;
-                    }
-                    else
-                    {
-                        m *= 1.05;
-                    }
-                    if (m * Math.Abs(sumFlow) > (0.8 * pressure)) 
-                    {
-                        m = 0.8 * pressure / Math.Abs(sumFlow);
-                    }
-                    if (m < 0.0001)
-                    {
-                        m = 0.0001;
-                    }
-                }
-                i += m * sumFlow;
-                pressure = sumFlow * m * 0.25 + i;
-                if (pressure < 0.001)
-                {
-                    pressure = 0.001;
-                }
+                if (sumFlow > 0)
+                    pressure += 0.1;
+                else if (sumFlow < 0)
+                    pressure -= 0.1;
+                sumFlow = 0;
             }
-            old_sumFlow = sumFlow;
-            sumFlow = 0;
-
-            //if (adjustable)
-            //{
-            //    if (sumFlow > 0)
-            //        pressure += 0.1;
-            //    else if (sumFlow < 0)
-            //        pressure -= 0.1;
-            //    sumFlow = 0;
-            //}
         }
     }
 }
