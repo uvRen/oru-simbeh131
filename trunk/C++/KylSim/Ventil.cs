@@ -12,7 +12,6 @@ namespace KylSim
 {
     public class Ventil : VVS
     {
-        //variabler
         private double admittans;
         private string old_str_pos;
         private string old_str_flow;
@@ -22,7 +21,18 @@ namespace KylSim
         private double flow;
         private bool open;
 
-        //konstruktor
+        /// <summary>
+        /// Konstruktor med parametrar
+        /// </summary>
+        /// <param name="admittans"></param>
+        /// <param name="name"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <param name="open"></param>
+        /// <param name="canvas"></param>
+        /// <param name="menu"></param>
         public Ventil(double admittans, string name, int x, int y, Nod input, Nod output, bool open, Graphics canvas, ContextMenuStrip menu)
             : base(name, canvas, x, y, menu)
         {
@@ -47,8 +57,9 @@ namespace KylSim
             this.old_str_pos = ventPos.ToString("0.0");
         }
 
-        //funktioner
-        //ritar ut ventilen och dess kopplingar
+        /// <summary>
+        /// Ritar ut ventilen och kopplingar till närliggande komponenter och ventilens namn
+        /// </summary>
         public override void drawCompenent()
         {
             Pen pen = new Pen(Color.Red);
@@ -105,19 +116,25 @@ namespace KylSim
             canvas.DrawString(name, font, brush, (float)x - 20, (float)y - 30);
         }
 
-        //öppnar ventilen
+        /// <summary>
+        /// Öppnar ventilen
+        /// </summary>
         public override void openComponent()
         {
             this.open = true;
         }
 
-        //stänger ventilen
+        /// <summary>
+        /// Stänger ventilen
+        /// </summary>
         public override void closeComponent()
         {
             this.open = false;
         }
 
-        //skriver ut ventilens vpos och flöde
+        /// <summary>
+        /// Skriver ut ventilkäglans position och flödet i ventilen
+        /// </summary>
         public override void display()
         {
             //stänger eller öppnar ventilen successivt
@@ -151,7 +168,9 @@ namespace KylSim
 
         }
 
-        //beräknar dynamik för ventilen
+        /// <summary>
+        /// Beräknar flödet i ventilen
+        /// </summary>
         public override void dynamik()
         {
             //anger det gamla flow-värdet till strängen old_flow
@@ -181,7 +200,13 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
-        //kollar vilken ventil som ska visa menyn
+        /// <summary>
+        /// Kollar om ventilen har blivit tryckt på och ska visa menyn eller inte
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="fonster"></param>
+        /// <returns>Komponent</returns>
         public override VVS menuClick(int x, int y, Control fonster)
         {
             //kollar om x-koordinaten stämmer överens med ventilen

@@ -13,15 +13,14 @@ namespace KylSim
     public partial class Form1 : Form
     {
         Graphics _canvas;
-
-        //Nod n1, n2, n3;
         VVS klickad_ventil;
-        //VVS[] komponenter;
         List<VVS> com;
         int count = 0;
         int antal = 0;
 
-        //konstruktor för fönstret
+        /// <summary>
+        /// Konstruktor för det grafiska fönstret
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -47,7 +46,11 @@ namespace KylSim
             antal = com.Count;
         }
 
-        //när programmet startar
+        /// <summary>
+        /// Funktionen körs när programmet startas och ritar då ut alla komponenter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             count = 0;
@@ -59,7 +62,11 @@ namespace KylSim
             com[4].openComponent();
         }
 
-        //exekveras en gång i sekunden
+        /// <summary>
+        /// Funktionen ett antal gånger i sekunden enligt en bestämd klockfrekvens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Update_Dynamik_Summaflode_Tick(object sender, EventArgs e)
         {
             count = 0;
@@ -76,7 +83,11 @@ namespace KylSim
 
         }
 
-        //när användaren klickar i fönstret
+        /// <summary>
+        /// När ett musklick uppfattas i fönstret
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             count = 10;
@@ -89,23 +100,41 @@ namespace KylSim
             }
         }
 
-        //när användaren trycker på öppna i menyn
+        /// <summary>
+        /// Vid klick på "Öppna" i ventilens meny
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void öppnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             klickad_ventil.openComponent();
         }
 
-        //när användaren trycker på stäng i menyn
+        /// <summary>
+        /// Vid klick på "Stäng" i ventilens meny
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stängToolStripMenuItem_Click(object sender, EventArgs e)
         {
             klickad_ventil.closeComponent();
         }
 
+        /// <summary>
+        /// Vid klick på "Starta" i pumpens meny
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             klickad_ventil.openComponent();
         }
 
+        /// <summary>
+        /// Vid klick på "Stoppa" i pumpens meny
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stoppaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             klickad_ventil.closeComponent();

@@ -12,7 +12,6 @@ namespace KylSim
 {
     public class Filter : VVS
     {
-        //variabler
         private double admittans;
         private string old_str_pos;
         private string old_str_flow;
@@ -22,7 +21,16 @@ namespace KylSim
         private double flow;
         private int countRensa = 0;
 
-        //konstruktor
+        /// <summary>
+        /// Konstruktor med parametrar
+        /// </summary>
+        /// <param name="admittans"></param>
+        /// <param name="name"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <param name="canvas"></param>
         public Filter(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas)
             : base(name, canvas, x, y)
         {
@@ -32,7 +40,9 @@ namespace KylSim
             ventPos = 1.0;
         }
 
-        //beräknar dynamik för ventilen
+        /// <summary>
+        /// Beräknare flödet i filtret
+        /// </summary>
         public override void dynamik()
         {
             //filtret blir igensatt
@@ -74,7 +84,9 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
-        //skriver ut filtrets vpos och flöde
+        /// <summary>
+        /// Skriver ut filteröppningen och fldöet
+        /// </summary>
         public override void display()
         {
             Brush brush = new SolidBrush(Color.Gainsboro);
@@ -110,6 +122,9 @@ namespace KylSim
             this.countRensa = this.countRensa + 1;
         }
 
+        /// <summary>
+        /// Ritar ut filtret, kopplingar till närliggande komponenter och filtrets namn
+        /// </summary>
         public override void drawCompenent()
         {
             //ritar ut filtrer

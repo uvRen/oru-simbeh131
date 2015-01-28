@@ -12,7 +12,6 @@ namespace KylSim
 {
     public class Pump : VVS
     {
-        //variabler
         private double flow;
         private double varv;
         private bool open;
@@ -23,7 +22,16 @@ namespace KylSim
         private double a;
         private double b;
 
-        //konstruktor
+        /// <summary>
+        /// Konstroktor med parametrar
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <param name="canvas"></param>
+        /// <param name="menu"></param>
         public Pump(string name, int x, int y, Nod input, Nod output, Graphics canvas, ContextMenuStrip menu)
             : base(name, canvas, x, y, menu)
         {
@@ -36,8 +44,9 @@ namespace KylSim
             open = false;
         }
 
-        //funktioner
-        //beräknar dynamik
+        /// <summary>
+        /// Beräknar flödet
+        /// </summary>
         public override void dynamik()
         {
             this.old_str_flow = this.flow.ToString("0.0");
@@ -70,7 +79,9 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
-        //ritar ut pumpen
+        /// <summary>
+        /// Ritar ut pumpen, kopplingar till närliggande komponenter och pumpens namn
+        /// </summary>
         public override void drawCompenent()
         {
             Pen circle = new Pen(Color.Red);
@@ -78,7 +89,7 @@ namespace KylSim
             Font font = new Font("Courier", 8);
             //ritar ut cirkeln
             canvas.DrawEllipse(circle, (float)x, (float)y, 40, 40);
-            //skriver ut namnet på noden
+            //skriver ut namnet på pumpen
             canvas.DrawString(name, font, brush, (float)x, (float)y - 20);
 
 
@@ -96,7 +107,9 @@ namespace KylSim
             canvas.DrawLine(pen2, p1, p2);
         }
 
-        //skriver ut flöde och vartal
+        /// <summary>
+        /// Skriver ut flödet och varvtalet i pumpen
+        /// </summary>
         public override void display()
         {
             //stänger eller öppnar pumpen successivt
@@ -130,19 +143,29 @@ namespace KylSim
             canvas.DrawString(info, font, brush, (float)x + 3, (float)y + 55);
         }
 
-        //öppnar pumpen
+        /// <summary>
+        /// Startar pumpen
+        /// </summary>
         public override void openComponent()
         {
             this.open = true;
         }
 
-        //stänger pumpen
+        /// <summary>
+        /// Stänger pumpen
+        /// </summary>
         public override void closeComponent()
         {
             this.open = false;
         }
 
-        //kollar vilken pump som ska visa menyn
+        /// <summary>
+        /// Kollar om pumpen har blivit tryckt på och ska visa menyn eller inte
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="fonster"></param>
+        /// <returns>Komponent</returns>
         public override VVS menuClick(int x, int y, Control fonster)
         {
             //kollar om x-koordinaten stämmer överens med pumpen

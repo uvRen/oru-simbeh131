@@ -12,7 +12,6 @@ namespace KylSim
 {
     public class Vvxl : VVS
     {
-        //variabler
         private double admittans;
         private string old_str_flow;
         private double ventPos = 1.0;
@@ -20,7 +19,16 @@ namespace KylSim
         private Nod output;
         private double flow;
 
-        //kosntruktor
+        /// <summary>
+        /// Konstruktor med parametrar
+        /// </summary>
+        /// <param name="admittans"></param>
+        /// <param name="name"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <param name="canvas"></param>
         public Vvxl(double admittans, string name, int x, int y, Nod input, Nod output, Graphics canvas)
             : base(name, canvas, x, y)
         {
@@ -31,6 +39,9 @@ namespace KylSim
             this.flow = 0;
         }
 
+        /// <summary>
+        /// Ritar ut värmeväxlaren, kopplingar till närliggande komponenter och namnet på värmeväxlaren
+        /// </summary>
         public override void drawCompenent()
         {
             //ritar ut filtrer
@@ -54,7 +65,9 @@ namespace KylSim
 
         }
 
-        //beräknar dynamik för ventilen
+        /// <summary>
+        /// Beräknare flödet genom värmeväxlaren
+        /// </summary>
         public override void dynamik()
         {
             //anger det gamla flow-värdet till strängen old_flow
@@ -84,6 +97,9 @@ namespace KylSim
             output.add_summaflode(flow);
         }
 
+        /// <summary>
+        /// Skriver ut flödet i värmeväxlaren
+        /// </summary>
         public override void display()
         {
             Brush brush = new SolidBrush(Color.Gainsboro);

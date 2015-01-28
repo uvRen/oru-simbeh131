@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="KylSim.Filter">
+    <Position X="0.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABAACAAAAAAAAACAFAABAAAAAAEAAAAAA=</HashCode>
+      <FileName>Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Form1">
+    <Position X="13.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAgACFACQAAIAABQCBAQUiAIAACCAgAAAAAQIAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Nod">
+    <Position X="7.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAAAIBAAAAAAAAAAAAAAFAAIACIAAIAIAAAAA=</HashCode>
+      <FileName>Nod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Program">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Pump">
+    <Position X="2.75" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABEADABCAAAAAACANAABAgAQAAAAAAAAA=</HashCode>
+      <FileName>Pump.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Ventil">
+    <Position X="5.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACABEADABCAAAAAACAFAABAAAAAAEAAAAAA=</HashCode>
+      <FileName>Ventil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.VVS">
+    <Position X="5.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAIBEABABAAAAAgCAAFEAAAAAABgAGAAAAA=</HashCode>
+      <FileName>VVS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Vvxl">
+    <Position X="10" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAACAAAAAAAAACAFAABAAAAAAEAAAAAA=</HashCode>
+      <FileName>Vvxl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Properties.Resources">
+    <Position X="10.25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KylSim.Properties.Settings">
+    <Position X="10.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
