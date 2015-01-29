@@ -70,11 +70,10 @@ namespace KylSim
         private void Update_Dynamik_Summaflode_Tick(object sender, EventArgs e)
         {
             count = 0;
-            //while (komponenter[count] != null)
             for (int i = 0; i < com.Count; i++)
             {
-                com[i].display();
                 com[i].dynamik();
+                com[i].display();
             }
         }
 

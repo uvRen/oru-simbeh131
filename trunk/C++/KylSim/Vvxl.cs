@@ -87,7 +87,7 @@ namespace KylSim
 
             else
             {
-                calc = -1 * this.admittans * ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
+                calc = (-1 * this.admittans) * ventPos * (Math.Sqrt(outNodPressure - inNodPressure));
                 this.flow = calc;
             }
 
