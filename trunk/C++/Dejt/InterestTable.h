@@ -18,7 +18,7 @@ public:
 		this->intresse.push_front(intresse);
 	}
 	
-	//returnerar en sträng med alla intressena som finns i vektorn
+	//returnerar en sträng med alla intressena som finns i vektorn [a, b, c ,, d]
 	string toString() {
 		ostringstream ut;
 
